@@ -1,0 +1,24 @@
+# API keys / secrets — never commit these
+.env
+.env.*
+*.pem
+
+# Go build artifacts
+/scripts/export/export
+/scripts/cleaning/cleaning
+*.exe
+*.test
+
+# Dataset exports.
+# These are pulled fresh from the LegiScan API and may be large or still
+# under review. They are intentionally excluded from version control by
+# default; see docs/dataset.md for how to regenerate them locally, or
+# commit them explicitly once reviewed.
+/data/raw/*.jsonl
+/data/cleaned/*.jsonl
+/data/cleaned/dataset-stats.json
+!/data/raw/.gitkeep
+!/data/cleaned/.gitkeep
+
+# OS cruft
+.DS_Store

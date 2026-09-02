@@ -42,18 +42,17 @@ The exact models, prompts, evaluation metrics, and sampling methodology will be 
 
 The source dataset consists of legislative information from the Tennessee General Assembly.
 
-The research dataset is derived from data originally collected for the TNBills civic information platform. The research version removes application-specific and unnecessary fields and retains only the legislative text and metadata required to reproduce the study.
+The research dataset is exported from the [LegiScan API](https://legiscan.com/legiscan), a public API for programmatic reuse of state legislative data, whose source for Tennessee bill text is the official PDFs published by the Tennessee General Assembly. The cleaned version retains only the legislative text and metadata required to reproduce the study.
 
-The cleaned dataset will include fields such as:
+The cleaned dataset includes:
 
 - Bill number / identifier
-- General Assembly
 - Bill title or caption
 - Legislative text
-- Source information
-- Additional metadata required by the research methodology
+- Sponsor and subject metadata
+- Companion-bill linkage (House/Senate)
 
-The final dataset schema and inclusion criteria will be documented before the primary experiment is conducted.
+Full provenance, schema, and reproduction instructions are documented in [docs/dataset.md](docs/dataset.md).
 
 ## Evaluation
 
