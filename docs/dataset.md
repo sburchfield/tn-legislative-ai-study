@@ -293,3 +293,29 @@ go run ./scripts/cleaning \
 
 All three flags have the defaults shown above, so `go run ./scripts/cleaning`
 with no flags is equivalent.
+
+## 12. Revision history
+
+**2026-09-02** — Reviewed the originally extracted data (from the TNBills
+DynamoDB table) and found a lot of the text to be mismatched and/or empty.
+Reverted to the LegiScan API to pull fresher, more reliable source data
+instead. The TN General Assembly's own site (`capitol.tn.gov`) has a
+`robots.txt` that disallows automated crawling, which ruled out scraping it
+directly as a fix. See §1 for the full comparison.
+
+While extracting data, found that LegiScan's own data had a stray document
+attached to one bill — a 113th General Assembly (2023) enacted "Public
+Chapter" PDF, misattached under the 114th GA's `HB0486` (TN reuses bill
+numbers each session). The original "pick earliest-dated document" logic
+picked that 2023 document over the real 2025 draft. Fixed
+`scripts/export/legiscan.go` to prefer an explicit `Draft`/`Introduced`
+type match instead of pure date, and added regression tests. See §2.
+
+Found one real, quantifiable data caveat: `sponsor` is LegiScan's current
+sponsor of record, but `bill_text` is frozen at the as-filed draft and
+still shows the original "By [Name]" header. When a bill's sponsorship
+changes later (TN allows this — e.g. `HB0349`'s history shows a "Sponsor
+change" a full year after filing), the two disagree. Checked this across
+the whole corpus by comparing `sponsor` against the "By X" line printed in
+each bill's own text, and introduced a `sponsor_as_filed` field to account
+for the discrepancy. See §4.
