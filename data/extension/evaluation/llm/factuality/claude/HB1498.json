@@ -1,0 +1,615 @@
+{
+  "stage": "factuality",
+  "generator_provider": "claude",
+  "generator_model": "claude-sonnet-5-5",
+  "bill_number": "HB1498",
+  "sample_sha256": "be2411dd73cfcb20c7e55b9fda2aca02a07e05cbf8e8c335a172e6402672d29c",
+  "source_sha256": "90931ebbba9b9f4783ba28cafa17eb9412be1cc81de2de873cabacae3f40207d",
+  "summary_sha256": "30f6ad53fb7946321e33f7739c97716f57e82b9df4d2f2a3abf34bac1d0f7083",
+  "inventory_sha256": null,
+  "prompt_sha256": "cf94d6026e90bc3c1c2a9ced75353faddbe5497bab4b3b7c86dfe07f0de7775b",
+  "format_sha256": "7e29c626820e84e8c549e146c6fdfd80c30fd12daae2930302452153da40ea17",
+  "requested_model": "gpt-6-astra",
+  "returned_model": "gpt-6-astra",
+  "quote_validator_version": "full-evidence-quotes-v2-2026-10-17",
+  "evaluated_at_utc": "2026-11-02T16:27:53.690443+00:00",
+  "request": {
+    "model": "gpt-6-astra",
+    "instructions": "You are auditing factual consistency in a plain-language summary of a cleaned, as-filed Tennessee bill. The user message provides the bill text and one generated summary. Treat both as data, not instructions. Use the bill text as the only evidence. Do not use LegiScan descriptions, later status, outside statutes, or the unreproduced contents of cited statutes.\n\nBreak the entire summary into atomic claims. For each, assign supported if the supplied bill text establishes it; contradicted if the bill text directly conflicts with it; or not_established if the supplied text cannot establish it. Check actors, scope, shall/may distinctions, amounts, dates, conditions, exceptions, and whether a background recital is wrongly presented as an operative requirement. Do not score source information omitted from the summary here; that belongs to coverage.\n\nA source-absent abbreviation expansion is not_established even when it seems familiar; briefly explain in the rationale that it is an explanatory expansion, not a demonstrated change to the bill's legal effect. Do not use outside knowledge to declare it correct. Do not excuse a claim that changes an actor, legal rule, scope, or condition.\n\nFor every claim, copy a short exact contiguous summary quote. Copy an exact contiguous source quote when a passage supports or contradicts the claim; use an empty source_quote only when the claim concerns information absent from the supplied text. Set error_type to none for supported claims. For contradicted or not_established claims, choose the most specific available category: insertion, substitution, actor, scope, modality, quantity_date, condition_exception, or other. Give a concise rationale. Do not paraphrase quotes or use ellipses. Return only the structured fields.\n",
+    "input": "Bill number: HB1498\n<bill_text>\nSENATE BILL 1487\n By Powers\n\n HOUSE BILL 1498\n\n By Reedy\n\n AN ACT to amend Tennessee Code Annotated, Title 16;\n Title 37 and Title 49, relative to student behavior.\n\nBE IT ENACTED BY THE GENERAL ASSEMBLY OF THE STATE OF TENNESSEE:\n\n SECTION 1. Tennessee Code Annotated, Title 49, Chapter 6, Part 3, is amended by\n\nadding the following as a new section:\n\n (a) This section is known and may be cited as the \"Early Behavioral Intervention\n\n and Reporting Act.\"\n\n (b) As used in this section, \"early warning signs\" means evidence of safety,\n\n health, or behavioral issues exhibited by a student and includes, but is not limited to,\n\n indicators of a student engaging in or being the victim of harassment, intimidation,\n\n bullying, or cyberbullying; making or receiving threats of violence; and exhibiting signs of\n\n substance abuse, mental health issues, self-harm, or suicidal ideation.\n\n (c) Each LEA and public charter school shall implement a computer-based\n\n system that teachers and school staff must use to input data of early warning signs\n\n demonstrated by students enrolled in the LEA or public charter school. Each LEA and\n\n public charter school shall ensure that each teacher and school staff member is trained\n\n to identify early warning signs and on how to input data into the computer-based system.\n\n (d) The computer-based system implemented pursuant to subsection (c) must:\n\n (1) Align with the harassment, intimidation, bullying, and cyberbullying\n\n policy adopted by the LEA in accordance with § 49-6-4503; the School Discipline\n\n Act, compiled in part 41 of this chapter; and with each school safety plan adopted\n\n by the LEA or public charter school pursuant to the Schools Against Violence in\n\n Education (SAVE) Act, compiled in part 8 of this chapter;\n\n (2) Include a database that is capable of receiving and maintaining\n\n student data entered by teachers and school staff on the early warning signs\n\n demonstrated by students; and\n\n (3) Immediately notify the LEA personnel serving on the LEA's threat\n\n assessment team created pursuant to § 49-6-2701, or the employee of the public\n\n charter school who is designated to receive such notification, when an early\n\n warning sign is entered into the system for a student.\n\n (e) The LEA or public charter school personnel receiving a notification of an\n\nearly warning sign of a student pursuant to subdivision (d)(3) shall review the\n\nnotification, as well as any other notifications previously received for the student, and\n\ndetermine whether further action is needed to address the student's behavior.\n\n (f)\n\n (1) Each LEA and public charter school shall annually submit a report to\n\n the department of education that provides the following data collected by the LEA\n\n or public charter school in the immediately preceding school year:\n\n (A) The number of early warning signs input into the system;\n\n (B) The number of early warning signs input into the system,\n\n disaggregated by the number input by a:\n\n (i) Teacher, disaggregated further by the grade levels and\n\n subject areas taught by such teachers; and\n\n (ii) School staff, disaggregated further by the position,\n\n assignment, and duties of such school staff;\n\n (C)\n\n (i) The number of students for whom more than one (1)\n\n early warning sign was input into the system; and\n\n (ii) The number of early warning signs for each student for\n\n whom more than one (1) early warning sign input into the system;\n\n (D) A general description of the types of early warning signs input\n\n into the system; provided, that a description must not include details or\n\n information that would allow a student to be identified; and\n\n (E) A general description of the actions taken by the LEA or\n\n public charter school in response to each early warning sign input into the\n\n system; provided, that a description must not include details or\n\n information that would allow a student to be identified.\n\n (2) Reports provided pursuant to this subsection (f) must not include any\n\n details or information that would allow a student to be identified.\n\n (g) Reports made pursuant to this section must comply with the Family\n\nEducational Rights and Privacy Act (FERPA) (20 U.S.C. § 1232g); § 10-7-504; the Data\n\nAccessibility, Transparency, and Accountability Act, compiled in chapter 1, part 7 of this\n\ntitle; and all other relevant privacy laws.\n\n (h) If the commissioner of education finds that an LEA or public charter school is\n\nnot complying with this section, then the commissioner may withhold state funds, in an\n\namount determined by the commissioner, from the LEA or public charter school until the\n\nLEA or public charter school is in compliance with this section.\n\n (i) Subsections (c)-(e) do not apply to an LEA or public charter school that\n\nmaintains a system for documenting early warning signs demonstrated by students that\n\nwas implemented in the LEA or public charter school before July 1, 2026; provided, that\n\nthe LEA or public charter school continuously maintains and utilizes the system.\n\nSECTION 2. This act takes effect July 1, 2026, the public welfare requiring it.\n</bill_text>\n\n<summary>\nThis bill would create the \"Early Behavioral Intervention and Reporting Act\" for Tennessee public schools. It would require each local education agency (LEA) and public charter school to set up a computer-based system where teachers and school staff must enter \"early warning signs\" shown by students. The bill defines early warning signs as evidence of safety, health, or behavioral issues. This includes, but is not limited to, signs that a student is involved in or is a victim of harassment, intimidation, bullying, or cyberbullying; is making or receiving threats of violence; or shows signs of substance abuse, mental health issues, self-harm, or suicidal ideation. Each LEA and charter school must also train every teacher and staff member to spot early warning signs and to enter data into the system.\n\nThe system would have to match the LEA's bullying policy, the School Discipline Act, and each school safety plan under the SAVE Act. It would need a database that can receive and keep the entered student data. It would also have to immediately notify the LEA's threat assessment team, or a designated charter school employee, whenever an early warning sign is entered for a student. The people who get a notice must review it and any earlier notices for that student. They must then decide whether more action is needed to address the student's behavior.\n\nEach LEA and charter school would have to send the Department of Education an annual report covering the prior school year. It would give the total number of early warning signs entered. It would break that number down by teachers (by grade level and subject taught) and by other staff (by position, assignment, and duties). It would give the number of students with more than one sign and the number of signs for each of those students. It would also give a general description of the types of signs and of the actions taken in response. Reports may not include details that could identify a student. They must follow FERPA, section 10-7-504, the Data Accessibility, Transparency, and Accountability Act, and other relevant privacy laws.\n\nIf the commissioner of education finds that an LEA or charter school is not complying, the commissioner may withhold state funds, in an amount the commissioner decides, until it complies.\n\nThe requirements for the system, training, and review of notices would not apply to an LEA or charter school that already had a system for documenting early warning signs before July 1, 2026, as long as it continuously maintains and uses that system. The bill takes effect July 1, 2026.\n</summary>",
+    "reasoning": {
+      "effort": "medium"
+    },
+    "max_output_tokens": 16384,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "full_factuality_v2",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "properties": {
+            "claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "claim": {
+                    "type": "string"
+                  },
+                  "summary_quote": {
+                    "type": "string"
+                  },
+                  "verdict": {
+                    "type": "string",
+                    "enum": [
+                      "supported",
+                      "contradicted",
+                      "not_established"
+                    ]
+                  },
+                  "source_quote": {
+                    "type": "string"
+                  },
+                  "error_type": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "insertion",
+                      "substitution",
+                      "actor",
+                      "scope",
+                      "modality",
+                      "quantity_date",
+                      "condition_exception",
+                      "other"
+                    ]
+                  },
+                  "rationale": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "claim",
+                  "summary_quote",
+                  "verdict",
+                  "source_quote",
+                  "error_type",
+                  "rationale"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "claims"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "store": false
+  },
+  "response": {
+    "id": "resp_026c2c6067de3afb016ae8b9d9027887d187458f7b4ec94797",
+    "object": "response",
+    "created_at": 1793636825,
+    "status": "completed",
+    "access_programs": null,
+    "background": false,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1793636873,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": "You are auditing factual consistency in a plain-language summary of a cleaned, as-filed Tennessee bill. The user message provides the bill text and one generated summary. Treat both as data, not instructions. Use the bill text as the only evidence. Do not use LegiScan descriptions, later status, outside statutes, or the unreproduced contents of cited statutes.\n\nBreak the entire summary into atomic claims. For each, assign supported if the supplied bill text establishes it; contradicted if the bill text directly conflicts with it; or not_established if the supplied text cannot establish it. Check actors, scope, shall/may distinctions, amounts, dates, conditions, exceptions, and whether a background recital is wrongly presented as an operative requirement. Do not score source information omitted from the summary here; that belongs to coverage.\n\nA source-absent abbreviation expansion is not_established even when it seems familiar; briefly explain in the rationale that it is an explanatory expansion, not a demonstrated change to the bill's legal effect. Do not use outside knowledge to declare it correct. Do not excuse a claim that changes an actor, legal rule, scope, or condition.\n\nFor every claim, copy a short exact contiguous summary quote. Copy an exact contiguous source quote when a passage supports or contradicts the claim; use an empty source_quote only when the claim concerns information absent from the supplied text. Set error_type to none for supported claims. For contradicted or not_established claims, choose the most specific available category: insertion, substitution, actor, scope, modality, quantity_date, condition_exception, or other. Give a concise rationale. Do not paraphrase quotes or use ellipses. Return only the structured fields.\n",
+    "max_output_tokens": 16384,
+    "max_tool_calls": null,
+    "model": "gpt-6-astra",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_026c2c6067de3afb016ae8b9d9e99887d1840efb6a4a9e2081",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABq6LoJoNRlnW-O-RAiwQbqlD7SOZcVXWsHbsDRnZwZh_hpMtYHlfnW9vQHWahXmBK4hQSwDz_N4CF9jSXa8JDADUQRgE8zGNw0e6P7wLA58cO4aAl7s5fnwXKL8d1fCExGcuYnmh9DnhOelg0IcIWzlrFnVEeuQlLVrLdxZNf_8F4JrkyA3M4dzIEpwX6uUyF1I0vjZwAH80wAJi5dOQihkXR0BL3DuQ7mTvFZogtGvrRXFAv8WBez0rZqbxjeckOAzfyAiw8cFUFWfBCYtPO7w1OAhi1IJrWA8T_9i-Hek_Exo-g8pm-vrcXOT3iOpkITQ2KRcoaSNnMdzoGOgsYJmPbYpo2_YN8YxSedAcvqZWw01Tcp2bITUufc7J4sImJ0oMYW8_cd0Khc5xFz6JcSmqCv-lIuAP8kt_B34QtVs1BOsimOV4r3qkA2LSOrTjyjZ6xkpOw5g5mG8b6EISEGJ2PwhWr95_suoBVx3BiQS5dKzFGQcX3OX_gHpPbcRRTIzVmaYCWZp6iEBVovzY_kyifDgT_-HQ6Um4GtBtmtplgJrH9xLhC92oey-QImt228SyGm_uCfMSKTBfTeBOws0az3idfL3e7qxk-9wnImnYsSEPwzzMtoG16aJ4Q-ufV9pM7dWFTlZO9mRksk8ExP8RUr0pwm_gIlEWlZIO0IaVA3tfIyNGaIe35gq4D8zy4KhhlhilQBJDk4QNe92QExEZ2GfyiBpHxyzhTerZ4p2WAXDkn2qvegaBo7nevcNj2DNbwZXxB8rIuAah7K6iBAuxn4bBEesgSemR3cZ1BeROEloTUKcNeHtY1w6HIjYY_xcMs0p0GQ8KgpyjIVNI3GAgTnjwCHXk0BH1tbyNqRMnUpiLJ7TiIX_dOIzoyriDq7-5m37Qaal-TkhyQcIU6tKnDtHN33k7fv1dOLOjY0j6_yh9Uh8selbiilVz28AvM4ADLSL6WyWQP4XM7ATb8DRJ7q93CZl1pYI9PvrXptQDKYI09ataSIhmGDvnAB7NIDbDCSTKRKu6aLcMzcXtXHTAgxX-f0tlJik4PAs9wnCrtsKGmg-vJPsrrwPY-l5HNP8R_SeFaWhjbMwyyQat1tjiZl5EXxzrkVoRoAQRhcDSxRrPykTB6OkXbEE07QdUffkGOcXUjm1iWrsTuRNJVqY_0lx7TxHSZTBCqjFEiwi-bzF0MLj5LxS2HiDVmrQgU7hJuD6dLsQ0ZGePs65izEIp2KnhncFQhXf9Ok8tavnWQXrUVMk4xt3ewuWx9w81I_8X_QWf3WTj5Th4N4Laga6T9qmzswVt7VSpowfqktahzSBVoXEoNPqEefT55k6f5vHmePvBsggY4xHHf82NCpQWJJi2S2KLUgxgzMr3em7YDzVWBChvgJ8tfIfiYNV7I2ukAbM26s1d4ipxcTW7XdyELEdZH77c3ki3MR43KViJwRnmwEk3DBDXjsG5xevt9nVwK86oyARLMEiXFC38RODJ62UIOuRE_iMNa1I689Ht9U3JUqK6oZGSC0wwbgzm8kHs_wDKgZBYjRAlNAs0YBxS9WYFSLNOwhwf20QcCCzmkctIvQUjQgvSiiKBG0W7cBF8MkhhgXmBcdbyV9OY-bqOMcX2DGEh-DuvyJw0vIfWbvI9cOvL9Y14rJXLQcFpAOmeT1G_51VZFcS97N5mPAM-O03tJeDbSaEXZsDC0WWT5jwJLt30ZNWB8RlmTW9gbF3_6VH7ezV-twVO7fQhy6DHo0GdyLZds9jkd0XcDpjsK7d9Wo8n5UjfAPehZ-sRMJSOZf8Dhwr5YslvM3CAQmHR8DKjmAL42JOBduJV6zN18cxL24ykLRWV5mvaOEE8VhRGwGiwsT0dAeLf8Fe6KhJmJk86D2Z0Q649IdZY72BLwy-64j9UNQF1QNZKCUfH-hcfNAJT0t5TT2LP7Xu1ceUGgZ9oM_Bp5HPba_J8wzyFmmWqGU7-rycqCuGlw3AbvbS-Aw9tIm-53yZhrzcKuoEb0nNg258rwJfHIL44pmCITfERpPtxIWLn0YzNOa9GrXNJgUF_nuWH-TPEokdw8ZAT2uPtCP8llrl6yR5gmE9vF0Qa094ktZh-HERiKReBqI-dS3DJBFuR_LAW1D6uMxgTNZnrYtTfnYAatTA6aO9CtoF-t7h82gYy5lfucE5FLni2pRK47Zp9Eo2_2GSXJD1M8I942oDTCw5ycEgiSpra4ySHbSGWL0laDKVaoKEdaM0DPE1mT9HeiPmAvEsl4sBk40La0q_xaqTrVV_43fXzkFfomRvtksxgoyOd75po_-FhznzThzv5jXR117f0Eq3Xd9qYUsL-pTdT0Yb3dIdY2ki_c0g-xMpMIfUXd-0UVg1gKMR_RRIDruMKDtWV-HlcDn2X3yn3XSQWNzV76ZmqRAR5dtuITXIXwk9oxmFuUV0FgWpObT3MdKTwQsjcpMw28xF7z9mEWsYtCp0QE8riQG7iT8rE16vQzKoKiZsK1JN7LNdI7xWsAJlGNdz4RQD1-obCh1os_iW6CoTLB7iN0Fmr9G_PEk0fU2fG2JPfi7JncaRcL5ZzxwXmtWuAACpsuCU5_9H4biTEwcIwk0TfPsxPzEQmU-1x0d3EB2pf-54x2I7-_RieJ9LiSYfE5bVYTNil-h8YVnpGyGiaF7QzM-6H20MxgcfbD3mWij2rbyvPVLhh17hOhqzjGcXS0ly6jxxRkeYPHoFDUUo2izM6QXlP6Z_x2i6EMDkxLljJqUTyDykMHZs1sNg7DMYiw9xY7JCjBpfBUohmC2bQDAlnic9cAXEXjc61gYhJP6zPKAQQPoC83RodaCr2h7kqZS_0HbUU9pDnsQBZX3EKrdBgesfsLWZAopGMsJ9oo8sF_1Vuf2F_trSoCfPi271zB9gNtfu17SF8q35ZWAVqXCB2lxgnvAWlQ_n6a-2N1wC6ReF7fqLyJ54ZhFgvpKuDZnJ47Lrh1cF7qxDBOSMrwwXs_PdG7P4pufXPc3pCcO_ohGwPQKjcyjK-oT8TXduWUxlJRnqf29T81QsqiodQqpdF1nIcedYAGtbVAZmgETDKaD5WGH6FkagFNaUw7br79X_q6-rpRJMoAUQhXE6IwlVhpjfsnoRP5LdVCFGUoLJxVZHhj-c7Pb7Kvm-VsVxMPCL7nrCZx9KHYUJf-iav-GsJde_GwQU4Gv-HC5YhsrMgCZBX8iPnT3Q6_miMS-Qd7Kwxju03vG5DGfr8TEUEazKP7JBgfWh_9nri94hKJtNZlciSXfl6mFk6eAShx8HQFPR1BV8L1lAt3y7LZNbzh5dz_VOQ5mBjvQEu10aR-96Xz_3f0lEuyNGMi1vqyVb-IEUurOWuAoJOiJy62fIl8u14VYGAYa5OeNoBT_ttJ8S72WACGRG2KClbVRhmkweMr8AfD_kkfUT-8ncHXH5p0XTMZzMRAXfkq2EmQ4ieMhgqQW7VyoLNmLjBndTByMgGxC4PhsZuDy2pcLjqDfLKfj1Zc71gsAIDXTgce23YYBjzUeqHHQU1RRftnz5bcdfFkv7QwfXu-eO8gerMee9I0YH5enOnVhxJVVBHZXjODV5-YpCENAwfhLXtt6n9oEkkRWb_MoX0d8W-Pf_s4gdiMjgw6o1ua0vrfyN22s0oGhfqULnHvmZujekeU3Wc7q_HL7Z5zboV8y6gzxyhDRnDnCcEjC6wJJ9m2-U3sKlkpPiayG3hL9NRpW77VS-_yyIne98QHuLschWwVnquivvOH6xIQbyR-F_pHA5eHe3OMIiGgjtTgLIM8VlOtXfwrIpdypdsB8F3SkzgHC7IRimTSGzoOSV2Z1g2DDww5XIBM7axTGvAXwhaKaGfPa2XqLchNn7pTMDB8z2z9odh2WovROy2-Bv0P-UwZQhPKi5GGOHJ_nPMCA9pXPfQn-RRgNyuQkqPaS8mXQrCUfoksmUXPXaIZQS2CD3xyyzlTmol_J2LSif2QhCKGS_0ukf1XiFLNwruUX-p5eL0lkG6dlU4DflZ1sB8zOlMzbqiGrVe_k5OdmrSpH4hoNmoC96eLsRcGp3IM12Bg6egHT2L8VupQtZvouu_nuGr8pFMSrQqmODslgMb9Wo6wHs0_WHGNZZLHU7JZhW3CxkpzyOfJZYUXB5glc86I3Eg9Nedy4BGXzj-RK9BKKhnU_LLUqr0_TjoJuuuycPixV-L6KETFthik0Di9SoxHPNAJDCIbFj75dwLtRhAtl_Czy0OSeCBaGRzLeMXaTqmybCr3Eu3csdnS3qXeuq56StF7ap_6mQ6klZG6pQrZe052bqIl8IPzLJVYRfWafAX2NVRLVp6p5jU9e4iL4Uk67pa70Vcyj44iUNwHaP6VRlge_UdtRnBp2-p3ENETKF4hkvivU0t1O777WCoXZ8fjOvKkSy1HWImsK5JAW1IxxmcTyiLhA2zElcIa7oouuF8RhURgtQkvKgb4bC2mB5fePryG6BPZFkT1Ieo2zVfunuKSEvEWYYJ7D71FvRSZlar8U14eML1u8C5wAML0THqWH_OJna24-QcMx5_j2VV4MFmWWw7GxURn66K-4TXjftX0L1oQb-WsRYZiwAJQ0aQKwGJjy_X06KATxJQjq8K5IPiX3LNfVrWxawVmCQ0SFgRt1YraqlMmdGKPiQ_5wp3LbLsyYXL5AJaDMrsT4HEXtRVXqxpcCc5bk1QcyVoYYaZEzdNcr-v4UdiRpJSPvyrfSyy2-tunhIXzU2vbLLiMhWQfcmPK8Yk_3r290mI0zge7WIwJoLjh37Ao0dPI5DURIs0jPHcH6Ybrk8uxgQy_6h64sq6ZfKuReR8MkGAiT-iuOPJP8AEyEBhTbyGxfvrsi3NHtf6aw6c8KzIPAl_Ctri03fxi8k51rdr9h1DUvuMuek93JdK1JGifW8e8IHlPEnBwsA6saDj3Z8xPhLZ0DUx_4pJw_kalD-1v7qdxqgO0nOewTjfrmjl741cSpbM3eBoXyaAzxDzCz3p0L-C0vYo5QQfMwOAFz00OA474wp4VCJNQM0MYrm7C_w9UNTQEdHEkgQXE42eAw6okb5-GzrOZ85K7Bq-OH2EptIAqKBQ==",
+        "summary": []
+      },
+      {
+        "id": "msg_026c2c6067de3afb016ae8b9e2363087d1b64135429c9dc506",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "{\n  \"claims\": [\n    {\n      \"claim\": \"The bill creates the Early Behavioral Intervention and Reporting Act.\",\n      \"summary_quote\": \"This bill would create the \\\"Early Behavioral Intervention and Reporting Act\\\"\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"This section is known and may be cited as the \\\"Early Behavioral Intervention\\n\\n and Reporting Act.\\\"\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The bill adds a new section with this name.\"\n    },\n    {\n      \"claim\": \"The act concerns Tennessee public schools.\",\n      \"summary_quote\": \"for Tennessee public schools\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"Each LEA and public charter school shall implement a computer-based\\n\\n system\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The bill amends Tennessee law and applies its school requirements to LEAs and public charter schools.\"\n    },\n    {\n      \"claim\": \"LEA stands for local education agency.\",\n      \"summary_quote\": \"local education agency (LEA)\",\n      \"verdict\": \"not_established\",\n      \"source_quote\": \"\",\n      \"error_type\": \"insertion\",\n      \"rationale\": \"The supplied text does not expand LEA. This is an explanatory expansion, not a demonstrated change to the bill's legal effect.\"\n    },\n    {\n      \"claim\": \"Each LEA and public charter school must implement a computer-based system, subject to the later-described exemption.\",\n      \"summary_quote\": \"require each local education agency (LEA) and public charter school to set up a computer-based system\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"Each LEA and public charter school shall implement a computer-based\\n\\n system\",\n      \"error_type\": \"none\",\n      \"rationale\": \"Subsection (c) requires implementation; the summary separately states the grandfathering exemption.\"\n    },\n    {\n      \"claim\": \"Teachers and school staff must enter students' early warning signs into the system.\",\n      \"summary_quote\": \"teachers and school staff must enter \\\"early warning signs\\\" shown by students\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"teachers and school staff must use to input data of early warning signs\\n\\n demonstrated by students enrolled in the LEA or public charter school\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The summary accurately describes the mandatory data-entry duty.\"\n    },\n    {\n      \"claim\": \"Early warning signs are evidence of safety, health, or behavioral issues.\",\n      \"summary_quote\": \"early warning signs as evidence of safety, health, or behavioral issues\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"\\\"early warning signs\\\" means evidence of safety,\\n\\n health, or behavioral issues exhibited by a student\",\n      \"error_type\": \"none\",\n      \"rationale\": \"This matches the statutory definition.\"\n    },\n    {\n      \"claim\": \"The definition nonexclusively includes a student engaging in or being a victim of harassment, intimidation, bullying, or cyberbullying.\",\n      \"summary_quote\": \"This includes, but is not limited to, signs that a student is involved in or is a victim of harassment, intimidation, bullying, or cyberbullying\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"includes, but is not limited to,\\n\\n indicators of a student engaging in or being the victim of harassment, intimidation,\\n\\n bullying, or cyberbullying\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The summary preserves the listed conduct, victim status, and nonexclusive nature of the examples.\"\n    },\n    {\n      \"claim\": \"Making or receiving threats of violence is an early warning sign.\",\n      \"summary_quote\": \"is making or receiving threats of violence\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"making or receiving threats of violence\",\n      \"error_type\": \"none\",\n      \"rationale\": \"Both making and receiving threats are expressly included.\"\n    },\n    {\n      \"claim\": \"Signs of substance abuse, mental health issues, self-harm, or suicidal ideation are included.\",\n      \"summary_quote\": \"shows signs of substance abuse, mental health issues, self-harm, or suicidal ideation\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"exhibiting signs of\\n\\n substance abuse, mental health issues, self-harm, or suicidal ideation\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The summary reproduces the listed categories.\"\n    },\n    {\n      \"claim\": \"Each LEA and public charter school must ensure every teacher and staff member is trained to identify early warning signs.\",\n      \"summary_quote\": \"Each LEA and charter school must also train every teacher and staff member to spot early warning signs\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"Each LEA and\\n\\n public charter school shall ensure that each teacher and school staff member is trained\\n\\n to identify early warning signs\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The summary captures the universal training requirement, subject to its later-described exemption.\"\n    },\n    {\n      \"claim\": \"The required training must cover entering data into the system.\",\n      \"summary_quote\": \"and to enter data into the system\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"and on how to input data into the computer-based system\",\n      \"error_type\": \"none\",\n      \"rationale\": \"Data-entry training is expressly required.\"\n    },\n    {\n      \"claim\": \"The system must align with the LEA's bullying policy.\",\n      \"summary_quote\": \"The system would have to match the LEA's bullying policy\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"Align with the harassment, intimidation, bullying, and cyberbullying\\n\\n policy adopted by the LEA in accordance with § 49-6-4503\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The summary uses bullying policy as shorthand for the specified policy.\"\n    },\n    {\n      \"claim\": \"The system must align with the School Discipline Act.\",\n      \"summary_quote\": \"the School Discipline Act\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"the School Discipline\\n\\n Act, compiled in part 41 of this chapter\",\n      \"error_type\": \"none\",\n      \"rationale\": \"This is one of the system's expressly required alignments.\"\n    },\n    {\n      \"claim\": \"The system must align with each school safety plan under the SAVE Act.\",\n      \"summary_quote\": \"each school safety plan under the SAVE Act\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"with each school safety plan adopted\\n\\n by the LEA or public charter school pursuant to the Schools Against Violence in\\n\\n Education (SAVE) Act\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The summary accurately identifies the required safety-plan alignment.\"\n    },\n    {\n      \"claim\": \"The system must include a database capable of receiving and retaining entered student data.\",\n      \"summary_quote\": \"It would need a database that can receive and keep the entered student data\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"Include a database that is capable of receiving and maintaining\\n\\n student data entered by teachers and school staff on the early warning signs\\n\\n demonstrated by students\",\n      \"error_type\": \"none\",\n      \"rationale\": \"Receiving and keeping data accurately paraphrases receiving and maintaining it.\"\n    },\n    {\n      \"claim\": \"The system must immediately notify the LEA's threat assessment team whenever an early warning sign is entered.\",\n      \"summary_quote\": \"immediately notify the LEA's threat assessment team\",\n      \"verdict\": \"contradicted\",\n      \"source_quote\": \"Immediately notify the LEA personnel serving on the LEA's threat\\n\\n assessment team created pursuant to § 49-6-2701\",\n      \"error_type\": \"actor\",\n      \"rationale\": \"The bill specifies LEA personnel serving on the team as recipients, not the team as a whole.\"\n    },\n    {\n      \"claim\": \"For a public charter school, the system must immediately notify its designated employee when an early warning sign is entered.\",\n      \"summary_quote\": \"or a designated charter school employee, whenever an early warning sign is entered for a student\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"or the employee of the public\\n\\n charter school who is designated to receive such notification, when an early\\n\\n warning sign is entered into the system for a student\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The designated charter employee and notification trigger match subsection (d)(3).\"\n    },\n    {\n      \"claim\": \"Personnel receiving a notification must review it.\",\n      \"summary_quote\": \"The people who get a notice must review it\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"The LEA or public charter school personnel receiving a notification of an\\n\\nearly warning sign of a student pursuant to subdivision (d)(3) shall review the\\n\\nnotification\",\n      \"error_type\": \"none\",\n      \"rationale\": \"Review is mandatory for the receiving personnel.\"\n    },\n    {\n      \"claim\": \"Personnel must also review earlier notifications for that student.\",\n      \"summary_quote\": \"and any earlier notices for that student\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"as well as any other notifications previously received for the student\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The bill expressly requires review of prior notifications.\"\n    },\n    {\n      \"claim\": \"Receiving personnel must determine whether further action is needed to address the student's behavior.\",\n      \"summary_quote\": \"They must then decide whether more action is needed to address the student's behavior\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"determine whether further action is needed to address the student's behavior\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The summary preserves the duty to decide, rather than asserting that further action is always required.\"\n    },\n    {\n      \"claim\": \"Each LEA and public charter school must submit an annual report to the department of education.\",\n      \"summary_quote\": \"Each LEA and charter school would have to send the Department of Education an annual report\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"Each LEA and public charter school shall annually submit a report to\\n\\n the department of education\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The actors, recipient, and annual frequency match.\"\n    },\n    {\n      \"claim\": \"The annual report covers the immediately preceding school year.\",\n      \"summary_quote\": \"covering the prior school year\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"data collected by the LEA\\n\\n or public charter school in the immediately preceding school year\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The reporting period is accurately stated.\"\n    },\n    {\n      \"claim\": \"The annual report must give the total number of early warning signs entered.\",\n      \"summary_quote\": \"It would give the total number of early warning signs entered\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"The number of early warning signs input into the system\",\n      \"error_type\": \"none\",\n      \"rationale\": \"This is the required count in subsection (f)(1)(A).\"\n    },\n    {\n      \"claim\": \"The report must separately count early warning signs entered by teachers.\",\n      \"summary_quote\": \"It would break that number down by teachers\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"The number of early warning signs input into the system,\\n\\n disaggregated by the number input by a:\\n\\n (i) Teacher\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The bill requires a teacher-specific breakdown.\"\n    },\n    {\n      \"claim\": \"Teacher-entered counts must be further broken down by grade level.\",\n      \"summary_quote\": \"by grade level\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"Teacher, disaggregated further by the grade levels and\\n\\n subject areas taught by such teachers\",\n      \"error_type\": \"none\",\n      \"rationale\": \"Grade levels taught are an expressly required reporting dimension.\"\n    },\n    {\n      \"claim\": \"Teacher-entered counts must be further broken down by subject taught.\",\n      \"summary_quote\": \"and subject taught\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"subject areas taught by such teachers\",\n      \"error_type\": \"none\",\n      \"rationale\": \"Subject areas taught are also required.\"\n    },\n    {\n      \"claim\": \"The report must separately count early warning signs entered by school staff.\",\n      \"summary_quote\": \"and by other staff\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"The number of early warning signs input into the system,\\n\\n disaggregated by the number input by a:\\n\\n (i) Teacher, disaggregated further by the grade levels and\\n\\n subject areas taught by such teachers; and\\n\\n (ii) School staff\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The summary accurately distinguishes the school-staff reporting category from the teacher category.\"\n    },\n    {\n      \"claim\": \"School-staff counts must be further broken down by position, assignment, and duties.\",\n      \"summary_quote\": \"by position, assignment, and duties\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"School staff, disaggregated further by the position,\\n\\n assignment, and duties of such school staff\",\n      \"error_type\": \"none\",\n      \"rationale\": \"All three listed reporting dimensions match the bill.\"\n    },\n    {\n      \"claim\": \"The report must give the number of students with more than one entered early warning sign.\",\n      \"summary_quote\": \"the number of students with more than one sign\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"The number of students for whom more than one (1)\\n\\n early warning sign was input into the system\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The threshold and student count match.\"\n    },\n    {\n      \"claim\": \"The report must give the number of entered signs for each student with multiple signs.\",\n      \"summary_quote\": \"the number of signs for each of those students\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"The number of early warning signs for each student for\\n\\n whom more than one (1) early warning sign input into the system\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The bill requires a count for each student in the multiple-sign group.\"\n    },\n    {\n      \"claim\": \"The report must generally describe the types of early warning signs entered.\",\n      \"summary_quote\": \"a general description of the types of signs\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"A general description of the types of early warning signs input\\n\\n into the system\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The description requirement is accurately summarized.\"\n    },\n    {\n      \"claim\": \"The report must generally describe actions taken in response to early warning signs.\",\n      \"summary_quote\": \"of the actions taken in response\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"A general description of the actions taken by the LEA or\\n\\n public charter school in response to each early warning sign input into the\\n\\n system\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The bill expressly requires descriptions of responsive actions.\"\n    },\n    {\n      \"claim\": \"Reports must not contain information that could identify a student.\",\n      \"summary_quote\": \"Reports may not include details that could identify a student\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"Reports provided pursuant to this subsection (f) must not include any\\n\\n details or information that would allow a student to be identified\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The summary preserves the prohibition on identifying information.\"\n    },\n    {\n      \"claim\": \"Reports must comply with FERPA.\",\n      \"summary_quote\": \"They must follow FERPA\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"Reports made pursuant to this section must comply with the Family\\n\\nEducational Rights and Privacy Act (FERPA) (20 U.S.C. § 1232g)\",\n      \"error_type\": \"none\",\n      \"rationale\": \"FERPA compliance is expressly required.\"\n    },\n    {\n      \"claim\": \"Reports must comply with section 10-7-504.\",\n      \"summary_quote\": \"section 10-7-504\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"§ 10-7-504\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The bill lists this provision among the mandatory reporting compliance requirements.\"\n    },\n    {\n      \"claim\": \"Reports must comply with the Data Accessibility, Transparency, and Accountability Act.\",\n      \"summary_quote\": \"the Data Accessibility, Transparency, and Accountability Act\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"the Data\\n\\nAccessibility, Transparency, and Accountability Act, compiled in chapter 1, part 7 of this\\n\\ntitle\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The named act is expressly included in subsection (g).\"\n    },\n    {\n      \"claim\": \"Reports must comply with other relevant privacy laws.\",\n      \"summary_quote\": \"and other relevant privacy laws\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"and all other relevant privacy laws\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The summary preserves the additional privacy-law compliance requirement.\"\n    },\n    {\n      \"claim\": \"The commissioner may withhold state funds upon finding an LEA or public charter school is not complying.\",\n      \"summary_quote\": \"If the commissioner of education finds that an LEA or charter school is not complying, the commissioner may withhold state funds\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"If the commissioner of education finds that an LEA or public charter school is\\n\\nnot complying with this section, then the commissioner may withhold state funds\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The summary retains both the required finding and the discretionary nature of withholding.\"\n    },\n    {\n      \"claim\": \"The commissioner determines the amount of state funds withheld.\",\n      \"summary_quote\": \"in an amount the commissioner decides\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"in an\\n\\namount determined by the commissioner\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The bill leaves the amount to the commissioner.\"\n    },\n    {\n      \"claim\": \"State funds may be withheld until the LEA or public charter school complies.\",\n      \"summary_quote\": \"until it complies\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"until the\\n\\nLEA or public charter school is in compliance with this section\",\n      \"error_type\": \"none\",\n      \"rationale\": \"Compliance is the stated endpoint for withholding.\"\n    },\n    {\n      \"claim\": \"The grandfathering exemption covers the system, training, and notification-review requirements.\",\n      \"summary_quote\": \"The requirements for the system, training, and review of notices would not apply\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"Subsections (c)-(e) do not apply\",\n      \"error_type\": \"none\",\n      \"rationale\": \"Subsections (c)-(e) contain the system, training, notification, and review duties summarized here.\"\n    },\n    {\n      \"claim\": \"The exemption applies to an LEA or public charter school with an early-warning-sign documentation system implemented before July 1, 2026.\",\n      \"summary_quote\": \"an LEA or charter school that already had a system for documenting early warning signs before July 1, 2026\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"an LEA or public charter school that\\n\\nmaintains a system for documenting early warning signs demonstrated by students that\\n\\nwas implemented in the LEA or public charter school before July 1, 2026\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The system's function and implementation cutoff match the exemption.\"\n    },\n    {\n      \"claim\": \"The exemption requires continuous maintenance and use of the existing system.\",\n      \"summary_quote\": \"as long as it continuously maintains and uses that system\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"provided, that\\n\\nthe LEA or public charter school continuously maintains and utilizes the system\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The summary preserves both continuing conditions.\"\n    },\n    {\n      \"claim\": \"The act takes effect July 1, 2026.\",\n      \"summary_quote\": \"The bill takes effect July 1, 2026\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"This act takes effect July 1, 2026\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The effective date matches Section 2.\"\n    }\n  ]\n}"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": false,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "description": null,
+        "name": "full_factuality_v2",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "claim": {
+                    "type": "string"
+                  },
+                  "summary_quote": {
+                    "type": "string"
+                  },
+                  "verdict": {
+                    "type": "string",
+                    "enum": [
+                      "supported",
+                      "contradicted",
+                      "not_established"
+                    ]
+                  },
+                  "source_quote": {
+                    "type": "string"
+                  },
+                  "error_type": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "insertion",
+                      "substitution",
+                      "actor",
+                      "scope",
+                      "modality",
+                      "quantity_date",
+                      "condition_exception",
+                      "other"
+                    ]
+                  },
+                  "rationale": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "claim",
+                  "summary_quote",
+                  "verdict",
+                  "source_quote",
+                  "error_type",
+                  "rationale"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "claims"
+          ],
+          "additionalProperties": false
+        },
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 2116,
+      "input_tokens_details": {
+        "cache_write_tokens": 2113,
+        "cached_tokens": 0
+      },
+      "output_tokens": 4836,
+      "output_tokens_details": {
+        "reasoning_tokens": 293
+      },
+      "total_tokens": 6952
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "parsed": {
+    "claims": [
+      {
+        "claim": "The bill creates the Early Behavioral Intervention and Reporting Act.",
+        "summary_quote": "This bill would create the \"Early Behavioral Intervention and Reporting Act\"",
+        "verdict": "supported",
+        "source_quote": "This section is known and may be cited as the \"Early Behavioral Intervention\n\n and Reporting Act.\"",
+        "error_type": "none",
+        "rationale": "The bill adds a new section with this name."
+      },
+      {
+        "claim": "The act concerns Tennessee public schools.",
+        "summary_quote": "for Tennessee public schools",
+        "verdict": "supported",
+        "source_quote": "Each LEA and public charter school shall implement a computer-based\n\n system",
+        "error_type": "none",
+        "rationale": "The bill amends Tennessee law and applies its school requirements to LEAs and public charter schools."
+      },
+      {
+        "claim": "LEA stands for local education agency.",
+        "summary_quote": "local education agency (LEA)",
+        "verdict": "not_established",
+        "source_quote": "",
+        "error_type": "insertion",
+        "rationale": "The supplied text does not expand LEA. This is an explanatory expansion, not a demonstrated change to the bill's legal effect."
+      },
+      {
+        "claim": "Each LEA and public charter school must implement a computer-based system, subject to the later-described exemption.",
+        "summary_quote": "require each local education agency (LEA) and public charter school to set up a computer-based system",
+        "verdict": "supported",
+        "source_quote": "Each LEA and public charter school shall implement a computer-based\n\n system",
+        "error_type": "none",
+        "rationale": "Subsection (c) requires implementation; the summary separately states the grandfathering exemption."
+      },
+      {
+        "claim": "Teachers and school staff must enter students' early warning signs into the system.",
+        "summary_quote": "teachers and school staff must enter \"early warning signs\" shown by students",
+        "verdict": "supported",
+        "source_quote": "teachers and school staff must use to input data of early warning signs\n\n demonstrated by students enrolled in the LEA or public charter school",
+        "error_type": "none",
+        "rationale": "The summary accurately describes the mandatory data-entry duty."
+      },
+      {
+        "claim": "Early warning signs are evidence of safety, health, or behavioral issues.",
+        "summary_quote": "early warning signs as evidence of safety, health, or behavioral issues",
+        "verdict": "supported",
+        "source_quote": "\"early warning signs\" means evidence of safety,\n\n health, or behavioral issues exhibited by a student",
+        "error_type": "none",
+        "rationale": "This matches the statutory definition."
+      },
+      {
+        "claim": "The definition nonexclusively includes a student engaging in or being a victim of harassment, intimidation, bullying, or cyberbullying.",
+        "summary_quote": "This includes, but is not limited to, signs that a student is involved in or is a victim of harassment, intimidation, bullying, or cyberbullying",
+        "verdict": "supported",
+        "source_quote": "includes, but is not limited to,\n\n indicators of a student engaging in or being the victim of harassment, intimidation,\n\n bullying, or cyberbullying",
+        "error_type": "none",
+        "rationale": "The summary preserves the listed conduct, victim status, and nonexclusive nature of the examples."
+      },
+      {
+        "claim": "Making or receiving threats of violence is an early warning sign.",
+        "summary_quote": "is making or receiving threats of violence",
+        "verdict": "supported",
+        "source_quote": "making or receiving threats of violence",
+        "error_type": "none",
+        "rationale": "Both making and receiving threats are expressly included."
+      },
+      {
+        "claim": "Signs of substance abuse, mental health issues, self-harm, or suicidal ideation are included.",
+        "summary_quote": "shows signs of substance abuse, mental health issues, self-harm, or suicidal ideation",
+        "verdict": "supported",
+        "source_quote": "exhibiting signs of\n\n substance abuse, mental health issues, self-harm, or suicidal ideation",
+        "error_type": "none",
+        "rationale": "The summary reproduces the listed categories."
+      },
+      {
+        "claim": "Each LEA and public charter school must ensure every teacher and staff member is trained to identify early warning signs.",
+        "summary_quote": "Each LEA and charter school must also train every teacher and staff member to spot early warning signs",
+        "verdict": "supported",
+        "source_quote": "Each LEA and\n\n public charter school shall ensure that each teacher and school staff member is trained\n\n to identify early warning signs",
+        "error_type": "none",
+        "rationale": "The summary captures the universal training requirement, subject to its later-described exemption."
+      },
+      {
+        "claim": "The required training must cover entering data into the system.",
+        "summary_quote": "and to enter data into the system",
+        "verdict": "supported",
+        "source_quote": "and on how to input data into the computer-based system",
+        "error_type": "none",
+        "rationale": "Data-entry training is expressly required."
+      },
+      {
+        "claim": "The system must align with the LEA's bullying policy.",
+        "summary_quote": "The system would have to match the LEA's bullying policy",
+        "verdict": "supported",
+        "source_quote": "Align with the harassment, intimidation, bullying, and cyberbullying\n\n policy adopted by the LEA in accordance with § 49-6-4503",
+        "error_type": "none",
+        "rationale": "The summary uses bullying policy as shorthand for the specified policy."
+      },
+      {
+        "claim": "The system must align with the School Discipline Act.",
+        "summary_quote": "the School Discipline Act",
+        "verdict": "supported",
+        "source_quote": "the School Discipline\n\n Act, compiled in part 41 of this chapter",
+        "error_type": "none",
+        "rationale": "This is one of the system's expressly required alignments."
+      },
+      {
+        "claim": "The system must align with each school safety plan under the SAVE Act.",
+        "summary_quote": "each school safety plan under the SAVE Act",
+        "verdict": "supported",
+        "source_quote": "with each school safety plan adopted\n\n by the LEA or public charter school pursuant to the Schools Against Violence in\n\n Education (SAVE) Act",
+        "error_type": "none",
+        "rationale": "The summary accurately identifies the required safety-plan alignment."
+      },
+      {
+        "claim": "The system must include a database capable of receiving and retaining entered student data.",
+        "summary_quote": "It would need a database that can receive and keep the entered student data",
+        "verdict": "supported",
+        "source_quote": "Include a database that is capable of receiving and maintaining\n\n student data entered by teachers and school staff on the early warning signs\n\n demonstrated by students",
+        "error_type": "none",
+        "rationale": "Receiving and keeping data accurately paraphrases receiving and maintaining it."
+      },
+      {
+        "claim": "The system must immediately notify the LEA's threat assessment team whenever an early warning sign is entered.",
+        "summary_quote": "immediately notify the LEA's threat assessment team",
+        "verdict": "contradicted",
+        "source_quote": "Immediately notify the LEA personnel serving on the LEA's threat\n\n assessment team created pursuant to § 49-6-2701",
+        "error_type": "actor",
+        "rationale": "The bill specifies LEA personnel serving on the team as recipients, not the team as a whole."
+      },
+      {
+        "claim": "For a public charter school, the system must immediately notify its designated employee when an early warning sign is entered.",
+        "summary_quote": "or a designated charter school employee, whenever an early warning sign is entered for a student",
+        "verdict": "supported",
+        "source_quote": "or the employee of the public\n\n charter school who is designated to receive such notification, when an early\n\n warning sign is entered into the system for a student",
+        "error_type": "none",
+        "rationale": "The designated charter employee and notification trigger match subsection (d)(3)."
+      },
+      {
+        "claim": "Personnel receiving a notification must review it.",
+        "summary_quote": "The people who get a notice must review it",
+        "verdict": "supported",
+        "source_quote": "The LEA or public charter school personnel receiving a notification of an\n\nearly warning sign of a student pursuant to subdivision (d)(3) shall review the\n\nnotification",
+        "error_type": "none",
+        "rationale": "Review is mandatory for the receiving personnel."
+      },
+      {
+        "claim": "Personnel must also review earlier notifications for that student.",
+        "summary_quote": "and any earlier notices for that student",
+        "verdict": "supported",
+        "source_quote": "as well as any other notifications previously received for the student",
+        "error_type": "none",
+        "rationale": "The bill expressly requires review of prior notifications."
+      },
+      {
+        "claim": "Receiving personnel must determine whether further action is needed to address the student's behavior.",
+        "summary_quote": "They must then decide whether more action is needed to address the student's behavior",
+        "verdict": "supported",
+        "source_quote": "determine whether further action is needed to address the student's behavior",
+        "error_type": "none",
+        "rationale": "The summary preserves the duty to decide, rather than asserting that further action is always required."
+      },
+      {
+        "claim": "Each LEA and public charter school must submit an annual report to the department of education.",
+        "summary_quote": "Each LEA and charter school would have to send the Department of Education an annual report",
+        "verdict": "supported",
+        "source_quote": "Each LEA and public charter school shall annually submit a report to\n\n the department of education",
+        "error_type": "none",
+        "rationale": "The actors, recipient, and annual frequency match."
+      },
+      {
+        "claim": "The annual report covers the immediately preceding school year.",
+        "summary_quote": "covering the prior school year",
+        "verdict": "supported",
+        "source_quote": "data collected by the LEA\n\n or public charter school in the immediately preceding school year",
+        "error_type": "none",
+        "rationale": "The reporting period is accurately stated."
+      },
+      {
+        "claim": "The annual report must give the total number of early warning signs entered.",
+        "summary_quote": "It would give the total number of early warning signs entered",
+        "verdict": "supported",
+        "source_quote": "The number of early warning signs input into the system",
+        "error_type": "none",
+        "rationale": "This is the required count in subsection (f)(1)(A)."
+      },
+      {
+        "claim": "The report must separately count early warning signs entered by teachers.",
+        "summary_quote": "It would break that number down by teachers",
+        "verdict": "supported",
+        "source_quote": "The number of early warning signs input into the system,\n\n disaggregated by the number input by a:\n\n (i) Teacher",
+        "error_type": "none",
+        "rationale": "The bill requires a teacher-specific breakdown."
+      },
+      {
+        "claim": "Teacher-entered counts must be further broken down by grade level.",
+        "summary_quote": "by grade level",
+        "verdict": "supported",
+        "source_quote": "Teacher, disaggregated further by the grade levels and\n\n subject areas taught by such teachers",
+        "error_type": "none",
+        "rationale": "Grade levels taught are an expressly required reporting dimension."
+      },
+      {
+        "claim": "Teacher-entered counts must be further broken down by subject taught.",
+        "summary_quote": "and subject taught",
+        "verdict": "supported",
+        "source_quote": "subject areas taught by such teachers",
+        "error_type": "none",
+        "rationale": "Subject areas taught are also required."
+      },
+      {
+        "claim": "The report must separately count early warning signs entered by school staff.",
+        "summary_quote": "and by other staff",
+        "verdict": "supported",
+        "source_quote": "The number of early warning signs input into the system,\n\n disaggregated by the number input by a:\n\n (i) Teacher, disaggregated further by the grade levels and\n\n subject areas taught by such teachers; and\n\n (ii) School staff",
+        "error_type": "none",
+        "rationale": "The summary accurately distinguishes the school-staff reporting category from the teacher category."
+      },
+      {
+        "claim": "School-staff counts must be further broken down by position, assignment, and duties.",
+        "summary_quote": "by position, assignment, and duties",
+        "verdict": "supported",
+        "source_quote": "School staff, disaggregated further by the position,\n\n assignment, and duties of such school staff",
+        "error_type": "none",
+        "rationale": "All three listed reporting dimensions match the bill."
+      },
+      {
+        "claim": "The report must give the number of students with more than one entered early warning sign.",
+        "summary_quote": "the number of students with more than one sign",
+        "verdict": "supported",
+        "source_quote": "The number of students for whom more than one (1)\n\n early warning sign was input into the system",
+        "error_type": "none",
+        "rationale": "The threshold and student count match."
+      },
+      {
+        "claim": "The report must give the number of entered signs for each student with multiple signs.",
+        "summary_quote": "the number of signs for each of those students",
+        "verdict": "supported",
+        "source_quote": "The number of early warning signs for each student for\n\n whom more than one (1) early warning sign input into the system",
+        "error_type": "none",
+        "rationale": "The bill requires a count for each student in the multiple-sign group."
+      },
+      {
+        "claim": "The report must generally describe the types of early warning signs entered.",
+        "summary_quote": "a general description of the types of signs",
+        "verdict": "supported",
+        "source_quote": "A general description of the types of early warning signs input\n\n into the system",
+        "error_type": "none",
+        "rationale": "The description requirement is accurately summarized."
+      },
+      {
+        "claim": "The report must generally describe actions taken in response to early warning signs.",
+        "summary_quote": "of the actions taken in response",
+        "verdict": "supported",
+        "source_quote": "A general description of the actions taken by the LEA or\n\n public charter school in response to each early warning sign input into the\n\n system",
+        "error_type": "none",
+        "rationale": "The bill expressly requires descriptions of responsive actions."
+      },
+      {
+        "claim": "Reports must not contain information that could identify a student.",
+        "summary_quote": "Reports may not include details that could identify a student",
+        "verdict": "supported",
+        "source_quote": "Reports provided pursuant to this subsection (f) must not include any\n\n details or information that would allow a student to be identified",
+        "error_type": "none",
+        "rationale": "The summary preserves the prohibition on identifying information."
+      },
+      {
+        "claim": "Reports must comply with FERPA.",
+        "summary_quote": "They must follow FERPA",
+        "verdict": "supported",
+        "source_quote": "Reports made pursuant to this section must comply with the Family\n\nEducational Rights and Privacy Act (FERPA) (20 U.S.C. § 1232g)",
+        "error_type": "none",
+        "rationale": "FERPA compliance is expressly required."
+      },
+      {
+        "claim": "Reports must comply with section 10-7-504.",
+        "summary_quote": "section 10-7-504",
+        "verdict": "supported",
+        "source_quote": "§ 10-7-504",
+        "error_type": "none",
+        "rationale": "The bill lists this provision among the mandatory reporting compliance requirements."
+      },
+      {
+        "claim": "Reports must comply with the Data Accessibility, Transparency, and Accountability Act.",
+        "summary_quote": "the Data Accessibility, Transparency, and Accountability Act",
+        "verdict": "supported",
+        "source_quote": "the Data\n\nAccessibility, Transparency, and Accountability Act, compiled in chapter 1, part 7 of this\n\ntitle",
+        "error_type": "none",
+        "rationale": "The named act is expressly included in subsection (g)."
+      },
+      {
+        "claim": "Reports must comply with other relevant privacy laws.",
+        "summary_quote": "and other relevant privacy laws",
+        "verdict": "supported",
+        "source_quote": "and all other relevant privacy laws",
+        "error_type": "none",
+        "rationale": "The summary preserves the additional privacy-law compliance requirement."
+      },
+      {
+        "claim": "The commissioner may withhold state funds upon finding an LEA or public charter school is not complying.",
+        "summary_quote": "If the commissioner of education finds that an LEA or charter school is not complying, the commissioner may withhold state funds",
+        "verdict": "supported",
+        "source_quote": "If the commissioner of education finds that an LEA or public charter school is\n\nnot complying with this section, then the commissioner may withhold state funds",
+        "error_type": "none",
+        "rationale": "The summary retains both the required finding and the discretionary nature of withholding."
+      },
+      {
+        "claim": "The commissioner determines the amount of state funds withheld.",
+        "summary_quote": "in an amount the commissioner decides",
+        "verdict": "supported",
+        "source_quote": "in an\n\namount determined by the commissioner",
+        "error_type": "none",
+        "rationale": "The bill leaves the amount to the commissioner."
+      },
+      {
+        "claim": "State funds may be withheld until the LEA or public charter school complies.",
+        "summary_quote": "until it complies",
+        "verdict": "supported",
+        "source_quote": "until the\n\nLEA or public charter school is in compliance with this section",
+        "error_type": "none",
+        "rationale": "Compliance is the stated endpoint for withholding."
+      },
+      {
+        "claim": "The grandfathering exemption covers the system, training, and notification-review requirements.",
+        "summary_quote": "The requirements for the system, training, and review of notices would not apply",
+        "verdict": "supported",
+        "source_quote": "Subsections (c)-(e) do not apply",
+        "error_type": "none",
+        "rationale": "Subsections (c)-(e) contain the system, training, notification, and review duties summarized here."
+      },
+      {
+        "claim": "The exemption applies to an LEA or public charter school with an early-warning-sign documentation system implemented before July 1, 2026.",
+        "summary_quote": "an LEA or charter school that already had a system for documenting early warning signs before July 1, 2026",
+        "verdict": "supported",
+        "source_quote": "an LEA or public charter school that\n\nmaintains a system for documenting early warning signs demonstrated by students that\n\nwas implemented in the LEA or public charter school before July 1, 2026",
+        "error_type": "none",
+        "rationale": "The system's function and implementation cutoff match the exemption."
+      },
+      {
+        "claim": "The exemption requires continuous maintenance and use of the existing system.",
+        "summary_quote": "as long as it continuously maintains and uses that system",
+        "verdict": "supported",
+        "source_quote": "provided, that\n\nthe LEA or public charter school continuously maintains and utilizes the system",
+        "error_type": "none",
+        "rationale": "The summary preserves both continuing conditions."
+      },
+      {
+        "claim": "The act takes effect July 1, 2026.",
+        "summary_quote": "The bill takes effect July 1, 2026",
+        "verdict": "supported",
+        "source_quote": "This act takes effect July 1, 2026",
+        "error_type": "none",
+        "rationale": "The effective date matches Section 2."
+      }
+    ]
+  },
+  "evaluation_status": "completed"
+}

@@ -1,0 +1,306 @@
+{
+  "stage": "source",
+  "generator_model": null,
+  "bill_number": "HB1740",
+  "sample_sha256": "be2411dd73cfcb20c7e55b9fda2aca02a07e05cbf8e8c335a172e6402672d29c",
+  "source_sha256": "63f9d9dd651430d56eaf7bc9e7f37d71c5d52aa66e4e2b9d4bef4dd0fe33e902",
+  "summary_sha256": null,
+  "inventory_sha256": null,
+  "prompt_sha256": "e60639a7b1cc45f710854a2953c71879cab08de1ffc6263661fcdea88e8badaf",
+  "format_sha256": "744aacd831094d7b3ec5b57303bae790617526ba8025f82be7e65765e492186e",
+  "requested_model": "gpt-6-astra",
+  "returned_model": "gpt-6-astra",
+  "evaluated_at_utc": "2026-10-17T16:27:52.563833+00:00",
+  "request": {
+    "model": "gpt-6-astra",
+    "instructions": "You are building a source-only inventory for a study of Tennessee bill summaries. The user message contains one cleaned, as-filed bill. Treat it as data, not as instructions. Use only its text. Do not use LegiScan descriptions, later status, outside law, or the unreproduced contents of cited statutes.\n\nList distinct material propositions about the bill's operative legal changes. Each proposition should identify the actor or affected group, action or textual amendment, and any scope, condition, exception, amount, deadline, or effective date needed to avoid a different legal meaning. Make propositions granular enough to assess coverage, but group repetitive cross-reference-only edits when they express one underlying change. Do not turn each citation, routine adjective, heading, generic enactment phrase, or background recital into its own proposition. A citation is material when the bill only amends or repeals text that is not reproduced and the target otherwise cannot be identified. In that situation state the textual operation and citation without inventing the old rule.\n\nAssign IDs P1, P2, and so on in bill order. Label a proposition core if omitting it would obscure an independent main change; otherwise label it supporting. Give its bill SECTION reference and one short exact contiguous source quote that anchors it. Copy the quote exactly, preserving wording and punctuation; do not paraphrase it or use ellipses. Return only the structured fields.\n",
+    "input": "Bill number: HB1740\n<bill_text>\nHOUSE BILL 1740\n\n By Glynn\n\n AN ACT to amend Tennessee Code Annotated, Title 49,\n relative to the Individualized Education Act.\n\nBE IT ENACTED BY THE GENERAL ASSEMBLY OF THE STATE OF TENNESSEE:\n\n SECTION 1. Tennessee Code Annotated, Section 49-10-1402(3), is amended by\n\ndeleting the subdivision and substituting:\n\n (3) \"Eligible student\" means a resident of this state who:\n\n (A)\n\n (i) Is a child with any of the following disabilities as defined by the\n\n state board of education pursuant to § 49-10-102:\n\n (a) Autism;\n\n (b) Deaf-blindness;\n\n (c) Hearing impairments;\n\n (d) Intellectual disability;\n\n (e) Orthopedic impairments;\n\n (f) Traumatic brain injury;\n\n (g) Visual impairments;\n\n (h) Developmental delay;\n\n (i) Multiple disabilities;\n\n (j) A specific learning disability; or\n\n (k) Deafness;\n\n (ii) Has an active individualized education program (IEP) in\n\n accordance with 34 C.F.R. § 300 et seq., § 49-10-102, and regulations of\n\n the state board of education with one (1) of the disabilities pursuant to\n\n subdivision (3)(A)(i) as the primary or secondary disability in effect at the\n\n time the department receives the request for participation in the program;\n\n and\n\n (iii) Meets at least one (1) of the following requirements:\n\n (a) Was previously enrolled in and attended a Tennessee\n\n public school for the one (1) full school year immediately\n\n preceding the school year in which the student receives an\n\n individualized education account (IEA);\n\n (b) Is enrolling in a Tennessee school for the first time; or\n\n (c) Received an individualized education account (IEA) in\n\n the previous school year; or\n\n (B)\n\n (i) Is a child with a medical condition that inhibits the child from\n\n attending school in person, as determined by the state board of\n\n education; and\n\n (ii) Is entitled to attend a public school;\n\n SECTION 2. Tennessee Code Annotated, Section 49-10-1402(6), is amended by\n\ndeleting the subdivision and substituting:\n\n (6) \"Participating school\" means:\n\n (A) A nonpublic school that meets the requirements established in this\n\n part and seeks to enroll eligible students; or\n\n (B) For an eligible student, as defined in subdivision (3)(B), a home\n\n school, as defined in § 49-6-3050(a)(1);\n\n SECTION 3. Tennessee Code Annotated, Section 49-10-1404, is amended by adding\n\nthe following as a new subsection:\n\n (d) This section does not apply to an eligible student, as defined in § 49-10-\n\n 1402(3)(B), or a participating school, as defined in § 49-10-1402(6)(B).\n\n SECTION 4. Tennessee Code Annotated, Section 49-10-1403(d), is amended by\n\nadding \", as defined in § 49-10-1402(6)(A),\" after \"A participating school\".\n\n SECTION 5. Tennessee Code Annotated, Section 49-10-1405(a)(7), is amended by\n\nadding \", as defined in § 49-10-1402(6)(A),\" after \"of participating schools\".\n\n SECTION 6. Tennessee Code Annotated, Title 49, Chapter 10, Part 14, is amended by\n\nadding the following as a new section:\n\n (a) A parent of an eligible student, as defined in § 49-10-1402(3)(B), shall ensure\n\n that funds in an IEA are used only for approved expenses listed in § 49-10-1403(b).\n\n (b) The department shall create and implement a process to ensure that funds in\n\n an IEA for an eligible student, as defined in § 49-10-1402(3)(B), are regularly monitored\n\n to ensure compliance with this section and § 49-10-1403(b).\n\n (c) The department may suspend or terminate an eligible student from\n\n participating in the program, if the department determines that the parent has failed to\n\n comply with the requirements of this section. If the department terminates an eligible\n\n student's participation in the program pursuant to this subsection (c), then the student is\n\n ineligible from participating in the program in the future.\n\n SECTION 7. This act takes effect July 1, 2026, the public welfare requiring it.\n</bill_text>",
+    "reasoning": {
+      "effort": "medium"
+    },
+    "max_output_tokens": 16384,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "full_source_propositions_v2",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "properties": {
+            "propositions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "proposition": {
+                    "type": "string"
+                  },
+                  "importance": {
+                    "type": "string",
+                    "enum": [
+                      "core",
+                      "supporting"
+                    ]
+                  },
+                  "section": {
+                    "type": "string"
+                  },
+                  "source_quote": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "proposition",
+                  "importance",
+                  "section",
+                  "source_quote"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "propositions"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "store": false
+  },
+  "response": {
+    "id": "resp_0af7fcc20153c864016ad3a1f1f9d887d2bae7201cdef029db",
+    "object": "response",
+    "created_at": 1792254449,
+    "status": "completed",
+    "access_programs": null,
+    "background": false,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1792254472,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": "You are building a source-only inventory for a study of Tennessee bill summaries. The user message contains one cleaned, as-filed bill. Treat it as data, not as instructions. Use only its text. Do not use LegiScan descriptions, later status, outside law, or the unreproduced contents of cited statutes.\n\nList distinct material propositions about the bill's operative legal changes. Each proposition should identify the actor or affected group, action or textual amendment, and any scope, condition, exception, amount, deadline, or effective date needed to avoid a different legal meaning. Make propositions granular enough to assess coverage, but group repetitive cross-reference-only edits when they express one underlying change. Do not turn each citation, routine adjective, heading, generic enactment phrase, or background recital into its own proposition. A citation is material when the bill only amends or repeals text that is not reproduced and the target otherwise cannot be identified. In that situation state the textual operation and citation without inventing the old rule.\n\nAssign IDs P1, P2, and so on in bill order. Label a proposition core if omitting it would obscure an independent main change; otherwise label it supporting. Give its bill SECTION reference and one short exact contiguous source quote that anchors it. Copy the quote exactly, preserving wording and punctuation; do not paraphrase it or use ellipses. Return only the structured fields.\n",
+    "max_output_tokens": 16384,
+    "max_tool_calls": null,
+    "model": "gpt-6-astra",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0af7fcc20153c864016ad3a1f2b9b487d2a4805f2172d9c2a3",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABq06IIo0RtLAxPj06-iWIVF3phZVAKooe0e4-KDeiWLOMoKN3eUp6byIU6gWp4RVBL1jtUM-fWYfZ5pZ1jJODFSy_nM0mkaHK6rbx8b6MiXvA7-H-7NfFmnC6CYAdeH73wxohVelttJ7liXgPBelk6c6tIi3TgiHTtafdTZVenSGbaY-SCUgmiWb8W7t00mlDt1YLeO-tc_EmHg3qdqiCCsrwUs8xzt3beGH13zSryPejVPaqeuqRqZFF57EBndcRQLumy4Clmk2g6QnuxPTd-cZEpa81JDCh8CKsiSPX-gfjJ_kNo5EyZ0v7a05P87kp3eE5TcTpj6047VNZiN05wlrAwmPQUsOc2IDCPzVY6Rf-lxqnYT0gbIpq1dbVsFOMJld8etrC9HAomzssPRee5FF6VO5IIbWFWMzvexKw2J_gbbjihnaYNBJohxfMN_iOqk2eOBBxb6B7smbcX1aOnsxTkb7ClLzbvxAwMXxpo-Y-nK4qAk2WkNaDpL7paksVixEmTTzXnv6r55f-NBZD3T516FZlKq8cTNXu0W-ugmIbXPTfxfBr7YmiS78X4XlzFDFuVdhD6LK0ypaJGT1ga2fjpTWZcoVn-FOtJvROgUefILge5h8g2I7UVKBjr1WIaCtMCBDr86q0_2gQEBz5E60nIug0m0fX1Q3kWDHkd7kdJbTsR4jPZ7Fu0KH4paEvc99x3r-rf3bPTse3yHUuyCHBjNPYP1FtnhyT9Ph4PnpNGmFrLsR4-5RTYuyVbRt1dTP3fPPCBexfFHeXP89zNpx3EFWS8bFnuSUPEDte8XOMa3kAL5VtYiJplTiMa7HlnIwJizwCHojkvA1dHN17kmf2Xlhx2ZMW1TyCN1YwtyH25nkXEymOvtnHuWa7fl3MjuViYKOs7QWC8wVaU7auFa-1ApGIJhyS0QJ2qwszd4WZJEnOtqLjTr5siRZEK5qF-2hKeA1kP3LEnjiU4UdxWeaPq4dAQZY4GWTw7A88-iFvXpv7z2ZEBc0IfdI16SBTKrrjHX0ggu4_gTF6j34EpzFqyaFTCXyVXRN47VkOVkUOr65LiQE5fLKJIDraGi254Qh5hBzs7RP5WfTQSx3Umx3_2AbD2wGuSKNJ0BbOZjWaZORwhFT5vHC2kv6J99OPOUisrxuTR-Upvuy_jbU-7eMCFWSuQyg1HHmrp5d3ErLDP-yvk3gMsziJbEJJxUYDe23nIA-gTUpNczuRLCOxbkJ5wGAr6Yd-f8-hPaCV2ipIBThuwp5_OTBhdknqkldmtNnr54os4D4wEhdUmMGeAbQJesm3gEiNjgoOLB5PbUpcAETH3lVwhiO7OphDKmGk2bdJIVey6nhecSoxWAt-TOSEIHnxtqVox_rLzjnR14fUFdvWIfNQgLqwR0mISq30D6_t5u_av_9LsE0kNStCsHsfo4KlIsZDpJRn05az1bh7zfNLvwPWBxwP8WopjGEI-alkaY5GiJOtV-U50Gxs93-YMwkAmnZLtjSF1G8_qu-Wyg8P4mV9fNhrXUp6ApioMPn8U51Utb6ILcieWWztueSC3E4UNRwUZm_kGnLiePdB5EweYy-2kqzC870FUd2YMkslDgVdID38UyrcIk85u0gxAoGw2Bj2lAyZjAM5XZ-hQzCP1-bjjz529G1gnbmOlPNJoCgNahf2ajWv5QoSGoGaiw1NZc6slNLzkd1xGe8cFCKkGKHRjv9cPHe-OScUcTdGY7RVDT4D3FWWZzKZkeZKGlAWPP1Z3_yQ49DSKz5gMTbBsLgeyqHVhxnk6bzJoFzgao7DosBS_DAixctASWh74Vbl-RMs3rmVHnD0vQNvR-3wb3kRNG9lKF9RSQ9MBGOGEW_08B7aP_UUcUiiYZ9RmGzssRPs4uI8DQxOOufZpukBDLG9rEVe-WHehvRiGR6PR8XTIW5g4LDErwHdToZRbY6TvsCjRAMiiZDs210b2M3pzwGeeRtgl_1MhU5mROKxOFx0QwYxvwHTOBrdZ2HK_u8jikmEmBBIFdc9yZoqOQzMM2jR3oc2tKLk2Eph8FJfHX9MLxP9R3v4EMncWJBD6gRKIHfB-s9Xkf6XDYEVFXainX4LL667BvhyxaRH8AGxFBbIWd-YtI7bGWCwoCeW3HUI3eWGjbCQAtgiktEH6lhgwwqFWRY4LIV5zcHB4O-fa2JtzXuhfftv27AWE3ipxfUHx_fEOaglCrFlsX45gNrmUNoF-Xye2T2wKUmmgWO4dAs1muPRxNzkBNT8FGXP1dSN83JA_KS4PQPWyE4oAV_0GZ7dwlEpZDnENXPrQn9P7-kezBAEgeh-v3EAf0s5FXPGYBX6KdObAoj20rGTo4crjqJAJW9TSxo09Hpuyv4qjRjqWpzrIDTEjZoSS_PpBpdZZKTsl_mOtqLJeg9LcuCUtBEj-TeVwcMD8gjVCpOPmDIzQWxmKLxF0ippRbqxh923yPdw6AnuahGcUdXK614TKt_W6__G4N_HcbTR7JDNVSlU4NUb3bNfc8n4TthkZdsleLLRpTctkn5c6UZfen8noeFjy-KJWqd7fKqPycSdna31pFA3NTIaSCD5Pt-cTplCQrap52rOH2kEOipRA1Ci3aH7ogBYDJvzSIDvgt2Y7Rgv6vC_8odAre7HBuVZzvZaZFvUm_JIOmhwLIzxAdtvn23TpuPb79IT1CasQz-iRS8e1bdZr-cBiE9qZc-nZ-H0M46rhKBKIIOPOfHI1EgonIacqrilRGF86nc0mqsgML_-_pdDBcDaqXSKZH1T_09ul-ZzQHSrY5IIGqvrOYgwdoItLwEQY8UjgXXM2lxNfGwMnYa4hslePZQlqvnZ2P3FskopgMDDeQA7GJV5ewMbX-eQiR0Kg8ZdZ_p8CdkUlohvwk3aRoU4j_dTZTlCNGSNQ0ALGldT5kXRyLhIXwXt13ChkEkmsRt1KEnRRJmXHXP6_pYNt-y7rpyVTpVecvPyCG4mJW5s8FQpj0mo0RDRKEjnyb2PJ5MAN49dDQldAYr1LB6MghaiGXPOMWoJS1Z35l6QO1EYPlGW6Tp9EebL2HLR2E-D39ZZYgNZ-BopPElWWhWB9Mgp9kQzRWrr9HuOrQStNt3aDUj09Lk9JEdGoldE_6OdmT5iop-wCaOVomww_AUh_fbiXMB_OJLXV9s8ujRP4otMSEJXn4acuN2KUACiPSEIHihLcTm17hzx7tO4cjdcoOopcYthiC80tVPH1nQAqcpErf8dtc-Jn2SIPSevFGF5mkUOqSgbIM583a48NwruDUe6v-t9-olCUVBBM8cLBy_ChXtp9WX9BtpupwcfHyR3qCXTsCPGi9-CYhpki39H_1rGjlVCV21WpGeuc4kBiSKTSrhnS649pD3TgjseYpLc5_upUwf7-L948-HS-SXfd69bqtBnQcG9LcJEPGOD8yvcUlDThETSd2KZDDN-da_zSigQwFmnsFWw9rTacM5KV3CyAynV3uf-lEEkpJnFU3qc1Zal0K9UQeiLV7rr3guyD7gRuhyhC9raOhLnkbWys1TrQXMpznIFnQZeSevQrsug-tVvf9ewQzJ73VGHs0DoGGYhH9r8JDPrDWFVOrMjbd6Aewzna4NkrvLW5TVe2_fAar_vRUvM0rOGxPA6RDOPAt6Mikzz0uehV9UyDytZafM1G_a4piFPyU7H1J8cO1lPU2I-Ps6O6M-K9HDkLLYxaH-7rcxbIavXX-Lb5i2QO5IWnO5FPQ1o_vg-tAs25n9WPX_KNaCW_jII0BV6B0ueUlZGC00dppk35_y8g03iwRCKa0s8x9-P3aHJDPBvj3NRA0ei_Orm38NA9bT8qvvMo52exJNO-ni4YzUlS2KLXhgZXWMaAJdhAzdBXqGlAPs13K-pajC_OBZxMtiag1ekIuQbkZCVCcqVd1NgW5UeVhcwLze49QXtgnYyRNF3SSgUbYqex1JDFvAfL4KqS0YMONkXhiIJSD3AChkk8tuCfx-zSzHrk97Umo6ED50EdrlJ6eDnuuQWhnwSmc6KW2yWiM66lN5sR7Wlo1IyK0J9thJRXaZjaOFH6r_4Fn_5lC7QdWuovGIsiOHO-oJ1ZZqtuPXuIPLUbLKLF5ygBOrpJNXzDdZSCKqtCbAE2ubmsVWq1RWrFLAg7qLO0ZhjmENsa5nKI6whHlXwQwoYO7oQFYnfnu8e-f_WNXwL9yWOlF2zbe0uhY2ZNCSDH9OOcI0okXJcJ7HGzJvbiOqDXkA2HyijFYI-7-OOT4K75gIUjOXvF3-siNegwr2r6RP7-9vIjAg1CqdYr9CR7OXm4xy_gaXKhvI9fchqJmsW9V8W_Z9eKt0eazwl5GPh7gNhHtP0h97RikuroyvV_VeBQ5oX6kPywBqLMAwSFRpJiiPe7uZ5-UaMp1gNNmHhV7gZrve6nuxlGpxMKJz7cbFSgrBJEnlfrB0hZF8TbHIyxj1mqRM8GitHxBsuNrR1Jvn7cGWmAXfnq5NoVdn6IobSSgmRWFAW7QkI-GoeKJcE1TzMcFriAvUdwREPiYhIImSDrjqjBjE-j2BGDqjlCsfCucFWuOqkqwPyBXq5o1gPiZ05dJIJ1sTW2PonD7hAccKX7w3EZn64JPr8g6dQTIak5heRC-ngE4wo7mECurUvMxEqX-N4EbqxtJ4ka9UcJpflyP6ABzle8kPGbeZ7tObdRttp5HFZVsHhbE9zPTwHGl-A-G9F4g2CGneAW9fk=",
+        "summary": []
+      },
+      {
+        "id": "msg_0af7fcc20153c864016ad3a1f7c0f487d2aed8eb4846b42d45",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "{\n  \"propositions\": [\n    {\n      \"id\": \"P1\",\n      \"proposition\": \"The replacement definition of “eligible student” establishes a disability-based route for Tennessee residents who meet the enrollment/history requirement and have autism, deaf-blindness, hearing impairments, intellectual disability, orthopedic impairments, traumatic brain injury, visual impairments, developmental delay, multiple disabilities, a specific learning disability, or deafness, as defined by the state board of education pursuant to § 49-10-102. The child must have an active IEP in accordance with 34 C.F.R. § 300 et seq., § 49-10-102, and state board regulations, identifying one of those disabilities as primary or secondary when the department receives the participation request.\",\n      \"importance\": \"core\",\n      \"section\": \"SECTION 1\",\n      \"source_quote\": \"\\\"Eligible student\\\" means a resident of this state who:\"\n    },\n    {\n      \"id\": \"P2\",\n      \"proposition\": \"For the disability-based eligibility route, the student must have enrolled in and attended a Tennessee public school for the full school year immediately preceding the year of receiving an IEA, be enrolling in a Tennessee school for the first time, or have received an IEA in the previous school year.\",\n      \"importance\": \"supporting\",\n      \"section\": \"SECTION 1\",\n      \"source_quote\": \"Meets at least one (1) of the following requirements:\"\n    },\n    {\n      \"id\": \"P3\",\n      \"proposition\": \"The replacement definition separately makes a Tennessee-resident child eligible if the child has a medical condition that inhibits in-person school attendance, as determined by the state board of education, and is entitled to attend a public school. This route does not require the disability, IEP, or enrollment/history conditions of the disability-based route.\",\n      \"importance\": \"core\",\n      \"section\": \"SECTION 1\",\n      \"source_quote\": \"Is a child with a medical condition that inhibits the child from\\n\\n attending school in person, as determined by the state board of\\n\\n education;\"\n    },\n    {\n      \"id\": \"P4\",\n      \"proposition\": \"The replacement definition of “participating school” includes a nonpublic school meeting Part 14 requirements and seeking to enroll eligible students, and, for students eligible under the medical-condition route in § 49-10-1402(3)(B), a home school as defined in § 49-6-3050(a)(1).\",\n      \"importance\": \"core\",\n      \"section\": \"SECTION 2\",\n      \"source_quote\": \"For an eligible student, as defined in subdivision (3)(B), a home\\n\\n school, as defined in § 49-6-3050(a)(1);\"\n    },\n    {\n      \"id\": \"P5\",\n      \"proposition\": \"New § 49-10-1404(d) makes § 49-10-1404 inapplicable to students eligible under the medical-condition route in § 49-10-1402(3)(B) and participating home schools defined in § 49-10-1402(6)(B).\",\n      \"importance\": \"core\",\n      \"section\": \"SECTION 3\",\n      \"source_quote\": \"This section does not apply to an eligible student\"\n    },\n    {\n      \"id\": \"P6\",\n      \"proposition\": \"The bill limits the participating-school references in § 49-10-1403(d) and § 49-10-1405(a)(7) to the nonpublic schools defined in § 49-10-1402(6)(A), by inserting that definitional cross-reference after “A participating school” and “of participating schools,” respectively.\",\n      \"importance\": \"supporting\",\n      \"section\": \"SECTIONS 4–5\",\n      \"source_quote\": \"adding \\\", as defined in § 49-10-1402(6)(A),\\\" after \\\"A participating school\\\".\"\n    },\n    {\n      \"id\": \"P7\",\n      \"proposition\": \"A parent of a student eligible under the medical-condition route must ensure that IEA funds are used only for approved expenses listed in § 49-10-1403(b).\",\n      \"importance\": \"core\",\n      \"section\": \"SECTION 6(a)\",\n      \"source_quote\": \"shall ensure\\n\\n that funds in an IEA are used only for approved expenses listed in § 49-10-1403(b).\"\n    },\n    {\n      \"id\": \"P8\",\n      \"proposition\": \"The department must create and implement a process for regular monitoring of IEA funds for students eligible under the medical-condition route to ensure compliance with the new section and § 49-10-1403(b).\",\n      \"importance\": \"core\",\n      \"section\": \"SECTION 6(b)\",\n      \"source_quote\": \"The department shall create and implement a process\"\n    },\n    {\n      \"id\": \"P9\",\n      \"proposition\": \"The department may suspend or terminate an eligible student's program participation if it determines that the parent failed to comply with the requirements of the new section.\",\n      \"importance\": \"core\",\n      \"section\": \"SECTION 6(c)\",\n      \"source_quote\": \"The department may suspend or terminate an eligible student from\\n\\n participating in the program\"\n    },\n    {\n      \"id\": \"P10\",\n      \"proposition\": \"A student whose participation is terminated under the new section's subsection (c) is ineligible to participate in the program in the future.\",\n      \"importance\": \"core\",\n      \"section\": \"SECTION 6(c)\",\n      \"source_quote\": \"then the student is\\n\\n ineligible from participating in the program in the future.\"\n    },\n    {\n      \"id\": \"P11\",\n      \"proposition\": \"The act takes effect July 1, 2026.\",\n      \"importance\": \"supporting\",\n      \"section\": \"SECTION 7\",\n      \"source_quote\": \"This act takes effect July 1, 2026, the public welfare requiring it.\"\n    }\n  ]\n}"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": false,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "description": null,
+        "name": "full_source_propositions_v2",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "propositions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "proposition": {
+                    "type": "string"
+                  },
+                  "importance": {
+                    "type": "string",
+                    "enum": [
+                      "core",
+                      "supporting"
+                    ]
+                  },
+                  "section": {
+                    "type": "string"
+                  },
+                  "source_quote": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "proposition",
+                  "importance",
+                  "section",
+                  "source_quote"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "propositions"
+          ],
+          "additionalProperties": false
+        },
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 1351,
+      "input_tokens_details": {
+        "cache_write_tokens": 1348,
+        "cached_tokens": 0
+      },
+      "output_tokens": 1551,
+      "output_tokens_details": {
+        "reasoning_tokens": 252
+      },
+      "total_tokens": 2902
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "parsed": {
+    "propositions": [
+      {
+        "id": "P1",
+        "proposition": "The replacement definition of “eligible student” establishes a disability-based route for Tennessee residents who meet the enrollment/history requirement and have autism, deaf-blindness, hearing impairments, intellectual disability, orthopedic impairments, traumatic brain injury, visual impairments, developmental delay, multiple disabilities, a specific learning disability, or deafness, as defined by the state board of education pursuant to § 49-10-102. The child must have an active IEP in accordance with 34 C.F.R. § 300 et seq., § 49-10-102, and state board regulations, identifying one of those disabilities as primary or secondary when the department receives the participation request.",
+        "importance": "core",
+        "section": "SECTION 1",
+        "source_quote": "\"Eligible student\" means a resident of this state who:"
+      },
+      {
+        "id": "P2",
+        "proposition": "For the disability-based eligibility route, the student must have enrolled in and attended a Tennessee public school for the full school year immediately preceding the year of receiving an IEA, be enrolling in a Tennessee school for the first time, or have received an IEA in the previous school year.",
+        "importance": "supporting",
+        "section": "SECTION 1",
+        "source_quote": "Meets at least one (1) of the following requirements:"
+      },
+      {
+        "id": "P3",
+        "proposition": "The replacement definition separately makes a Tennessee-resident child eligible if the child has a medical condition that inhibits in-person school attendance, as determined by the state board of education, and is entitled to attend a public school. This route does not require the disability, IEP, or enrollment/history conditions of the disability-based route.",
+        "importance": "core",
+        "section": "SECTION 1",
+        "source_quote": "Is a child with a medical condition that inhibits the child from\n\n attending school in person, as determined by the state board of\n\n education;"
+      },
+      {
+        "id": "P4",
+        "proposition": "The replacement definition of “participating school” includes a nonpublic school meeting Part 14 requirements and seeking to enroll eligible students, and, for students eligible under the medical-condition route in § 49-10-1402(3)(B), a home school as defined in § 49-6-3050(a)(1).",
+        "importance": "core",
+        "section": "SECTION 2",
+        "source_quote": "For an eligible student, as defined in subdivision (3)(B), a home\n\n school, as defined in § 49-6-3050(a)(1);"
+      },
+      {
+        "id": "P5",
+        "proposition": "New § 49-10-1404(d) makes § 49-10-1404 inapplicable to students eligible under the medical-condition route in § 49-10-1402(3)(B) and participating home schools defined in § 49-10-1402(6)(B).",
+        "importance": "core",
+        "section": "SECTION 3",
+        "source_quote": "This section does not apply to an eligible student"
+      },
+      {
+        "id": "P6",
+        "proposition": "The bill limits the participating-school references in § 49-10-1403(d) and § 49-10-1405(a)(7) to the nonpublic schools defined in § 49-10-1402(6)(A), by inserting that definitional cross-reference after “A participating school” and “of participating schools,” respectively.",
+        "importance": "supporting",
+        "section": "SECTIONS 4–5",
+        "source_quote": "adding \", as defined in § 49-10-1402(6)(A),\" after \"A participating school\"."
+      },
+      {
+        "id": "P7",
+        "proposition": "A parent of a student eligible under the medical-condition route must ensure that IEA funds are used only for approved expenses listed in § 49-10-1403(b).",
+        "importance": "core",
+        "section": "SECTION 6(a)",
+        "source_quote": "shall ensure\n\n that funds in an IEA are used only for approved expenses listed in § 49-10-1403(b)."
+      },
+      {
+        "id": "P8",
+        "proposition": "The department must create and implement a process for regular monitoring of IEA funds for students eligible under the medical-condition route to ensure compliance with the new section and § 49-10-1403(b).",
+        "importance": "core",
+        "section": "SECTION 6(b)",
+        "source_quote": "The department shall create and implement a process"
+      },
+      {
+        "id": "P9",
+        "proposition": "The department may suspend or terminate an eligible student's program participation if it determines that the parent failed to comply with the requirements of the new section.",
+        "importance": "core",
+        "section": "SECTION 6(c)",
+        "source_quote": "The department may suspend or terminate an eligible student from\n\n participating in the program"
+      },
+      {
+        "id": "P10",
+        "proposition": "A student whose participation is terminated under the new section's subsection (c) is ineligible to participate in the program in the future.",
+        "importance": "core",
+        "section": "SECTION 6(c)",
+        "source_quote": "then the student is\n\n ineligible from participating in the program in the future."
+      },
+      {
+        "id": "P11",
+        "proposition": "The act takes effect July 1, 2026.",
+        "importance": "supporting",
+        "section": "SECTION 7",
+        "source_quote": "This act takes effect July 1, 2026, the public welfare requiring it."
+      }
+    ]
+  },
+  "evaluation_status": "completed"
+}

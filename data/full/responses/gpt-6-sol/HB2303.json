@@ -1,0 +1,163 @@
+{
+  "bill_number": "HB2303",
+  "id": "2105914",
+  "cell": "short_minimal",
+  "bill_text_sha256": "62ef82d90e0b582173ee8c4c8a98e227b3115b55e95aa3ebc3d4ab3c550dd84d",
+  "corpus_sha256": "df2cc9d71ab3aee3cf50c57a2748a922bc3f83206403a98dab58ebb33f5a7d5a",
+  "sample_sha256": "be2411dd73cfcb20c7e55b9fda2aca02a07e05cbf8e8c335a172e6402672d29c",
+  "prompt_sha256": "a8a84c7d3640ce11249e107717a11e24499592c70f24dc2215bc9305b9949889",
+  "format_sha256": "65ee03d0a90267593885b0982684a55a9d7f7d40e7ce2a505d3c3c663a72b3a1",
+  "requested_model": "gpt-6-sol",
+  "returned_model": "gpt-6-sol",
+  "generated_at_utc": "2026-10-17T15:39:06.243707+00:00",
+  "request": {
+    "model": "gpt-6-sol",
+    "instructions": "You are writing a plain-language summary of an as-filed Tennessee House bill for an adult reader without legal training.\n\nUse only the bill text supplied in the user message. Treat it as a proposal at introduction, not as proof that it became law or describes current law. Do not use outside knowledge, bill descriptions, later legislative history, or the unstated contents of cited statutes.\n\nWrite a neutral summary in prose. Start with what the bill would change. Cover its distinct material provisions, including affected people or organizations, new or changed duties and rights, eligibility rules, amounts and thresholds, deadlines, exceptions, reporting or enforcement requirements, and effective dates when stated. Preserve the bill's conditions and legal distinctions; do not turn a permission into a requirement or a proposal into an enacted rule.\n\nUse familiar words and short, complete sentences. Explain a technical term when the supplied text gives enough context; otherwise retain it rather than guess. Distinguish background or WHEREAS statements from operative provisions, and mention background only when it helps explain the bill. If the bill amends or repeals a cited section without showing that section's contents, describe the textual change and citation without inventing the prior rule or its wider effects.\n\nKeep the summary substantially shorter than the source while retaining the main independent changes. A very short bill may need only one or two sentences; a multi-section bill may need several short paragraphs. Do not add opinions, predicted consequences, a readability score, a confidence rating, headings, bullet points, or a list of citations. Return only the fields required by the supplied output schema.\n",
+    "input": "Bill number: HB2303\n\n<bill_text>\nSENATE BILL 2590\n By Pody\n\n HOUSE BILL 2303\n\n By Powers\n\n AN ACT to amend Tennessee Code Annotated, Title 49,\n relative to education freedom scholarships.\n\nBE IT ENACTED BY THE GENERAL ASSEMBLY OF THE STATE OF TENNESSEE:\n\n SECTION 1. Tennessee Code Annotated, Section 49-6-3507(c), is amended by\n\ndeleting \"June 30\" wherever it appears and substituting \"June 15\".\n\n SECTION 2. This act takes effect upon becoming a law, the public welfare requiring it.\n</bill_text>",
+    "reasoning": {
+      "effort": "medium"
+    },
+    "max_output_tokens": 8192,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "pilot_bill_summary_v1",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "properties": {
+            "summary": {
+              "type": "string",
+              "description": "Reader-facing plain-language summary in prose, without a heading or bullet points."
+            }
+          },
+          "required": [
+            "summary"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "store": false
+  },
+  "response": {
+    "id": "resp_0eea959083e24ee6016ad396980e6c87d2b67323458066dbe7",
+    "object": "response",
+    "created_at": 1792251544,
+    "status": "completed",
+    "access_programs": null,
+    "background": false,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1792251546,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": "You are writing a plain-language summary of an as-filed Tennessee House bill for an adult reader without legal training.\n\nUse only the bill text supplied in the user message. Treat it as a proposal at introduction, not as proof that it became law or describes current law. Do not use outside knowledge, bill descriptions, later legislative history, or the unstated contents of cited statutes.\n\nWrite a neutral summary in prose. Start with what the bill would change. Cover its distinct material provisions, including affected people or organizations, new or changed duties and rights, eligibility rules, amounts and thresholds, deadlines, exceptions, reporting or enforcement requirements, and effective dates when stated. Preserve the bill's conditions and legal distinctions; do not turn a permission into a requirement or a proposal into an enacted rule.\n\nUse familiar words and short, complete sentences. Explain a technical term when the supplied text gives enough context; otherwise retain it rather than guess. Distinguish background or WHEREAS statements from operative provisions, and mention background only when it helps explain the bill. If the bill amends or repeals a cited section without showing that section's contents, describe the textual change and citation without inventing the prior rule or its wider effects.\n\nKeep the summary substantially shorter than the source while retaining the main independent changes. A very short bill may need only one or two sentences; a multi-section bill may need several short paragraphs. Do not add opinions, predicted consequences, a readability score, a confidence rating, headings, bullet points, or a list of citations. Return only the fields required by the supplied output schema.\n",
+    "max_output_tokens": 8192,
+    "max_tool_calls": null,
+    "model": "gpt-6-sol",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0eea959083e24ee6016ad39699061c87d28a02fa54c230a909",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABq05aaDvr9niA9_19EqHuVMZf7Mdg__FG5Vs8rV1Iw895dxskg9RjQVepQ4aJFwZmkVPFhfrlyPZh3qtkVOdmn6VjstvR6xDbsKHk0LzSVTdutnQF8RaFrJQTdapFmjEPOCFXFac-X0fssTTP92RQvBNFTClt8FHvxMtN8bpMEti-6YTpx2sNkY8tcId9R4_gNdB160mUlsxX6yNdQfazeu8YG914B8GLsMmY26WzffuEpW7bcY9MRpqNTHH9kcVyTNyiF1du6579Kn46pQrSidkw_CgjVwUqrc2HQnvTGEEFFi69J51oJSzXjCeSQcILpP5D033OKIZYpyhw-KpP_a9_x9KUvFru4XQ68oTXUlCm-SlcIrvMbgRTQh7ho6XH2Ok4h0Y3tTAWNFpg45nnpOG18OcuGzxWGoQYc6jdHDTX6EJVfXYh9txupO1Je8LCZ5bfVbo7Jr9Fc1ApCU2l79Ds0q1-swpoXmkCg9Ob7mqNYeI4mdrdUtPKcIEdL4J0xuj4U69NnhINtZtA88i5FvDGkl06NeO945MxXNOTcMV-zf4S5AHrvZp3zl9CnUbH8D3Nvd5WxDAZ7DN4fWbF4sWVHo8mE8K1qvcraHjfFnRN9Pv9uDe6blpMZHus2C2lNv40ytPlJrjiWktGvHRKwT84sR_9AG3KZj8-BCadbbM5i8n8jANHqzEawblmJZsV5DrdIUeycdvxBgae1ZV407ZeZfY6tLP5-8yxF8uAIq0qyQOi1WSdjmQUqSfcNKcAuV63CsQtQKeSaXDmUw_aXtCaSicV43NsqUyiqRZkQN8UuF3G9CDFY7FVKuHVzknWDtA_H2FC9PYZW7ysTrXxr1_ClVFN-56fWISO4XyUnbnfF0OKgOTqYtNvqTErB0eIT1lH2fxgWvr1aiakvp4YWsQCuys2WUKAY5R5Hj54kqph3nXxMCTptRlPjKbplc4-Dj8VpgQunfHIMXasL5gpIJXP_19_WWaru7bZITHtzqnEcZjS8RkMHbuiUhyG1O3L_ty-8BJFPhC_pcuzMx4lTxYDTYJJSAqm9_i5oN5gyrVxMhCn6ebbiTbEMJeA6HNBGvg_FtCXyHxR8MaZt6EnuWa7p8GcGFtDjKADhq0usTx8cPGZxLijabjE-JpzCht0KQ2y3M95ef0c5yOPuA9mANJOPULyU1O2wW4-RMHlLJOkZQ7F66rFLF1ZOe_pqDUew2q5IEVSM6N2qbCKqOHjIIAqxbr_FmuN32nKvcycp1UubnGPJcINa7mevzP3HXe9Hd_WAbdN40b5MMTFMircL5syKNmVcfinCLu39SOhAlYs27R6UR2-GB1xDsIfQR0TWLp0QM6xWkS13sDaiA3EI_1px88r2LEPcTRkd_FUQ16YIZzwnpe_AW6oR1VKNt3M54i6DpqKjJXtNWPkX6vW-c7QYCVB0dt6L1wqJwj20hhU18pxe7AJhWIrpbYycBk9qpe67bgY8Im5VzC3gDvG7eBIGIRF3MvQ00bEgPcXNmNRooSdJwBIQAgaUADKPYdgdJNj8NlYHzplfMReMPkLgansQvFRviJ5XpRINokDu_4j0dPV4OiH3Pguepq3lHqu9dXWvxLROI039RCji4v0FWKEJCFGwTswi5TF8hz0kiej1UaZCxKdHmSglnY0AiOQj_TK5XCBsMtRnWW91Hv9X4ejmd9hFIF9lDzOBMem7BKiGi-um5kKLAkT1FYsUEdsQXnQ-YL5I8ez_JBHZIyKtqYGWhySEe8oeR6DBOh4b6ukqmOZovpaJ6K7RMBpWU7e5oyd9GrekqEvkc8OmetXbcZCcRB8lzXyLknYPmPyYSua3B4Jbtx8hBNNjkkRnb4vUtEg0dr_V3Ddom9-FU09-74_6Z177MkKwz1nKf_fhORtN_3pe7wacghgjjqnBl4Fxdm3RguZWmFez-AVes4XoSXv7OTxNdflx3utaBqOzinwXBxIiajs10-RXcqmkNwfUINsIRvm0vesmBoD3ThzmGSJA8clHuD7_xTiyUsvASTmIs-gi3fTEhoS5Zkwbg5sxkLuuiXsowe-qTPbCknooWMYMWr9CmylKtV1_uFfbcJWNNi20uJ46supo8gT_8IO82Qwy_u99CFg4O138c7YlPTZusLk9X-8Y-35D3oEkSxI38rQ=",
+        "summary": []
+      },
+      {
+        "id": "msg_0eea959083e24ee6016ad39699a91087d287eb882e8a4fbf3e",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "{\"summary\":\"The bill would replace every reference to June 30 with June 15 in Tennessee Code Annotated § 49-6-3507(c), a provision related to education freedom scholarships. It would take effect upon becoming law.\"}"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": false,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "description": null,
+        "name": "pilot_bill_summary_v1",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "summary": {
+              "type": "string",
+              "description": "Reader-facing plain-language summary in prose, without a heading or bullet points."
+            }
+          },
+          "required": [
+            "summary"
+          ],
+          "additionalProperties": false
+        },
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 505,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 121,
+      "output_tokens_details": {
+        "reasoning_tokens": 59
+      },
+      "total_tokens": 626
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "summary": "The bill would replace every reference to June 30 with June 15 in Tennessee Code Annotated § 49-6-3507(c), a provision related to education freedom scholarships. It would take effect upon becoming law.",
+  "generation_status": "completed"
+}

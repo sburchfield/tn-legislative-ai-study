@@ -1,0 +1,81 @@
+{
+  "provider": "gemma",
+  "bill_number": "HB1772",
+  "bill_text_sha256": "a2340d9b9537749d3e2d442319768ff78037e774e5808346b40158d936a3fcbf",
+  "corpus_sha256": "df2cc9d71ab3aee3cf50c57a2748a922bc3f83206403a98dab58ebb33f5a7d5a",
+  "pilot_sample_sha256": "0b8e28366a34191bbfdab4f281d53c882443998a2827072528a23bf25cb2c6e1",
+  "prompt_sha256": "a8a84c7d3640ce11249e107717a11e24499592c70f24dc2215bc9305b9949889",
+  "format_sha256": "65ee03d0a90267593885b0982684a55a9d7f7d40e7ce2a505d3c3c663a72b3a1",
+  "requested_model": "google/gemma-4-31b-qat",
+  "returned_model": "google/gemma-4-31b-qat",
+  "generated_at_utc": "2026-11-02T15:49:33.851735+00:00",
+  "gemma_file_sha256": "6f63619c9e33826a2a8ab195a344c79ecae7c82341d5567e28fd8863df056a7b",
+  "api_version": null,
+  "request": {
+    "model": "google/gemma-4-31b-qat",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are writing a plain-language summary of an as-filed Tennessee House bill for an adult reader without legal training.\n\nUse only the bill text supplied in the user message. Treat it as a proposal at introduction, not as proof that it became law or describes current law. Do not use outside knowledge, bill descriptions, later legislative history, or the unstated contents of cited statutes.\n\nWrite a neutral summary in prose. Start with what the bill would change. Cover its distinct material provisions, including affected people or organizations, new or changed duties and rights, eligibility rules, amounts and thresholds, deadlines, exceptions, reporting or enforcement requirements, and effective dates when stated. Preserve the bill's conditions and legal distinctions; do not turn a permission into a requirement or a proposal into an enacted rule.\n\nUse familiar words and short, complete sentences. Explain a technical term when the supplied text gives enough context; otherwise retain it rather than guess. Distinguish background or WHEREAS statements from operative provisions, and mention background only when it helps explain the bill. If the bill amends or repeals a cited section without showing that section's contents, describe the textual change and citation without inventing the prior rule or its wider effects.\n\nKeep the summary substantially shorter than the source while retaining the main independent changes. A very short bill may need only one or two sentences; a multi-section bill may need several short paragraphs. Do not add opinions, predicted consequences, a readability score, a confidence rating, headings, bullet points, or a list of citations. Return only the fields required by the supplied output schema.\n"
+      },
+      {
+        "role": "user",
+        "content": "Bill number: HB1772\n\n<bill_text>\nHOUSE BILL 1772\n\n By Raper\n\n AN ACT to amend Tennessee Code Annotated, Title 9;\n Title 28; Title 29; Title 40 and Title 49, relative to\n offender reentry.\n\nBE IT ENACTED BY THE GENERAL ASSEMBLY OF THE STATE OF TENNESSEE:\n\n SECTION 1. Tennessee Code Annotated, Title 40, Chapter 29, Part 1, is amended by\n\nadding the following as a new section:\n\n (a) In any proceeding on a claim against a higher education institution for\n\n negligence in admitting, enrolling, extending housing opportunities to, or otherwise\n\n facilitating the educational attainment of a person who has been previously convicted of\n\n a criminal offense, a higher education institution is not liable based solely upon the fact\n\n that the person has been previously convicted of a criminal offense.\n\n (b) In a cause of action against a higher education institution for negligence in\n\n admitting, enrolling, extending housing opportunities to, or otherwise facilitating the\n\n educational attainment of a person who has been previously convicted of a criminal\n\n offense, evidence that the person has been previously convicted of a criminal offense is\n\n not admissible.\n\n (c) Subsections (a) and (b) do not apply when:\n\n (1) The higher education institution had actual knowledge of the person's\n\n prior conviction for a violent offense, as defined in § 40-35-120(b), or a violent\n\n sexual offense, as defined in § 40-39-202; or\n\n (2) The higher education institution, having actual knowledge of the\n\n person's commission of a violent offense, as defined in § 40-35-120(b), or a\n\n violent sexual offense, as defined in § 40-39-202, after admittance, was willful in\n\n allowing the person to continue enrolling in, residing at, or otherwise utilizing the\n\n higher education institution.\n\n (d) This section does not create a cause of action or expand an existing cause of\n\n action.\n\n (e) Section 1-3-119 relative to implied rights of action applies to this section.\n\n (f) As used in this section, \"higher education institution\" includes, but is not\n\n limited to, a school, college, university, or other type of entity offering educational\n\n credentials, instruction, or educational services primarily to persons who have completed\n\n or terminated the person's secondary education or who are beyond the age of\n\n compulsory high school attendance for the attainment of educational, professional, or\n\n vocational objectives.\n\n SECTION 2. This act takes effect July 1, 2026, the public welfare requiring it, and\n\napplies to claims arising on or after that date.\n</bill_text>"
+      }
+    ],
+    "response_format": {
+      "type": "json_schema",
+      "json_schema": {
+        "name": "pilot_bill_summary_v1",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "properties": {
+            "summary": {
+              "type": "string",
+              "description": "Reader-facing plain-language summary in prose, without a heading or bullet points."
+            }
+          },
+          "required": [
+            "summary"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "reasoning_effort": "none",
+    "max_tokens": 2048,
+    "stream": false
+  },
+  "response": {
+    "id": "chatcmpl-1ef2hg0ubqzlvt7m35bpkl",
+    "object": "chat.completion",
+    "created": 1793634555,
+    "model": "google/gemma-4-31b-qat",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"summary\": \"This bill would limit the liability of higher education institutions in negligence claims involving people with prior criminal convictions. Under the proposal, a higher education institution would not be held liable for negligence in admitting, enrolling, providing housing, or otherwise facilitating the education of a person solely because that person had a prior criminal conviction. Additionally, evidence of such a conviction would be inadmissible in these types of lawsuits. These protections would not apply if the institution had actual knowledge that the person was convicted of a violent offense or a violent sexual offense, or if the institution willfully allowed a person to continue their education or residency after having actual knowledge of such an offense. This bill does not create or expand any causes of action. The definition of a higher education institution includes schools, colleges, universities, or other entities providing credentials or instruction to people who have finished secondary education or are past the age of compulsory high school attendance. If passed, this act would take effect July 1, 2026, and apply to claims arising on or after that date.\"\n}",
+          "reasoning_content": "",
+          "tool_calls": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 947,
+      "completion_tokens": 221,
+      "total_tokens": 1168,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "stats": {},
+    "system_fingerprint": "google/gemma-4-31b-qat"
+  },
+  "summary": "This bill would limit the liability of higher education institutions in negligence claims involving people with prior criminal convictions. Under the proposal, a higher education institution would not be held liable for negligence in admitting, enrolling, providing housing, or otherwise facilitating the education of a person solely because that person had a prior criminal conviction. Additionally, evidence of such a conviction would be inadmissible in these types of lawsuits. These protections would not apply if the institution had actual knowledge that the person was convicted of a violent offense or a violent sexual offense, or if the institution willfully allowed a person to continue their education or residency after having actual knowledge of such an offense. This bill does not create or expand any causes of action. The definition of a higher education institution includes schools, colleges, universities, or other entities providing credentials or instruction to people who have finished secondary education or are past the age of compulsory high school attendance. If passed, this act would take effect July 1, 2026, and apply to claims arising on or after that date.",
+  "generation_status": "completed"
+}

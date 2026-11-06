@@ -1,114 +1,29 @@
-# Evaluating AI-Mediated Transformations of Legislative Text
+# Tennessee Legislative AI Study
 
-This repository contains the data, code, methodology, and results for an independent research project conducted as part of INSC 493 at the University of Tennessee, Knoxville.
+INSC 499 independent study, University of Tennessee, Knoxville — Sam Burchfield, 2026.
 
-## Project Overview
+This repository contains the dataset, frozen methods, raw model outputs, evaluation records, and [final paper draft](docs/final-paper.md) for a study of plain-language summaries of Tennessee education bills.
 
-Legislative documents are often lengthy, complex, and difficult for non-expert audiences to interpret. Large language models (LLMs) provide an opportunity to transform legislative text into more accessible representations, such as summaries and plain-language explanations.
+## Main finding
 
-This project examines how AI-mediated transformations affect the accessibility of legislative information. Using Tennessee legislative bills as the source material, the study will compare original legislative text with AI-generated representations using computational measures of readability, linguistic complexity, information density, and information preservation.
+The four tested model configurations generally reduced formula-measured linguistic complexity, but information preservation varied substantially. Greater compression did not necessarily produce better readability or coverage. These are descriptive findings for the sampled bills and recorded model settings, not a general ranking of model providers.
 
-The project will also investigate differences between multiple large language models when transforming the same source material.
+## Research questions
 
-## Research Questions
+1. To what extent do LLM-generated plain-language summaries reduce the measured linguistic complexity of Tennessee legislative bills?
+2. To what extent do they preserve the substantive information and factual consistency of the source legislation?
+3. How do different LLMs compare in the tradeoff between reducing linguistic complexity and preserving substantive information and factual consistency?
 
-### Primary Research Question
+## Study at a glance
 
-**RQ1:** How do AI-mediated transformations of legislative text affect measurable information accessibility compared with the original legislative text?
+- **Corpus:** 2,684 validated, cleaned as-filed House bills from the 114th Tennessee General Assembly. [Provenance and schema](docs/dataset.md).
+- **Domain:** 336 bills in a frozen 18-label education subject set. A separate nine-bill [pilot](docs/pilot-evaluation-run.md) tested the pipeline.
+- **Scored sample:** 36 education bills, excluding the pilot, selected reproducibly with 12 in each original source-length tertile. [Design](docs/full-experiment-design-draft.md) and [manifest](data/full/sample.json).
+- **Summarizers:** GPT-6 Sol, GPT-6 Luna, Claude Sonnet 5.5, and local Gemma 4 31B QAT Q4_0, each producing one summary for every scored bill under the same [instruction](prompts/pilot-summary-v1.txt).
+- **Evaluation:** Three pinned readability formulas; source-proposition coverage and claim-level factual consistency judged by GPT-6 Astra; and a whitespace-word compression ratio. The dimensions remain separate. One researcher performed a limited, source-based problem check on 12 summaries from three preselected bills; it is not expert validation.
 
-### Secondary Research Questions
+## Results and reproduction
 
-**RQ2:** How do different forms of AI-mediated transformation, such as summaries and plain-language explanations, differ in readability, linguistic complexity, and information preservation?
+The [final paper](docs/final-paper.md) presents the method, results, limitations, and literature. The [original Sol/Luna results](docs/full-experiment-results.md) and [cross-provider extension results](docs/cross-provider-extension-results.md) provide detailed descriptive tables and reviewer comparisons. Exact generation and evaluation settings, raw-response logging, hashes, API interruptions, and validation are recorded in the [original run](docs/full-experiment-run.md), [extension run](docs/cross-provider-extension-run.md), and [chronological journal](docs/journal.md).
 
-**RQ3:** To what extent do different large language models vary in their ability to produce accessible representations of legislative text while preserving source information?
-
-## Methodology
-
-The study will use a computational evaluation approach rather than a human-subjects usability study.
-
-The general experimental pipeline is:
-
-1. Collect legislative source documents.
-2. Clean and normalize the legislative text and associated metadata.
-3. Select a representative research sample.
-4. Submit identical source material and prompts to selected LLMs.
-5. Store the generated representations along with model and prompt metadata.
-6. Evaluate the original and generated texts using computational metrics.
-7. Compare results across representations and models.
-
-The exact models, prompts, evaluation metrics, and sampling methodology will be documented as the study progresses.
-
-## Dataset
-
-The source dataset consists of legislative information from the Tennessee General Assembly.
-
-The research dataset is exported from the [LegiScan API](https://legiscan.com/legiscan), a public API for programmatic reuse of state legislative data, whose source for Tennessee bill text is the official PDFs published by the Tennessee General Assembly. The cleaned version retains only the legislative text and metadata required to reproduce the study.
-
-The cleaned dataset includes:
-
-- Bill number / identifier
-- Bill title or caption
-- Legislative text
-- Sponsor and subject metadata
-- Companion-bill linkage (House/Senate)
-
-Full provenance, schema, and reproduction instructions are documented in [docs/dataset.md](docs/dataset.md).
-
-## Evaluation
-
-The study will investigate several dimensions of AI-mediated legislative text transformation.
-
-Potential measures include:
-
-### Readability
-
-- Flesch Reading Ease
-- Flesch-Kincaid Grade Level
-- Gunning Fog Index
-- SMOG Index
-
-### Linguistic Characteristics
-
-- Word count
-- Sentence count
-- Average sentence length
-- Lexical characteristics
-
-### Information Transformation
-
-- Compression ratio
-- Information density
-- Information preservation
-- Factual consistency / fidelity
-
-The final evaluation methodology will be informed by the literature review and documented before the full experiment is conducted.
-
-## Repository Structure
-
-```text
-.
-├── data/
-│   ├── raw/
-│   ├── cleaned/
-│   └── samples/
-│
-├── docs/
-│   ├── methodology.md
-│   ├── research-questions.md
-│   └── research-journal.md
-│
-├── literature/
-│   └── bibliography.md
-│
-├── prompts/
-│
-├── scripts/
-│   ├── export/
-│   ├── cleaning/
-│   └── evaluation/
-│
-├── results/
-│   ├── raw/
-│   └── processed/
-│
-└── README.md
+The frozen corpus is in `data/cleaned/`; sample manifests, raw responses, and automated evaluation records are under `data/pilot/`, `data/full/`, and `data/extension/`. Scripts for validation, selection, generation, evaluation, and analysis are under `scripts/`. The original and extension metric files are [`data/full/evaluation/metrics.json`](data/full/evaluation/metrics.json) and [`data/extension/evaluation/metrics.json`](data/extension/evaluation/metrics.json); the [four-model paired analysis](data/extension/evaluation/four-model-analysis.json) is derived from them. The full-study design and execution records specify the commands and exact frozen inputs needed to validate or rebuild these derived files.

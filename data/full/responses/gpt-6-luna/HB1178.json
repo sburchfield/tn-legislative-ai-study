@@ -1,0 +1,156 @@
+{
+  "bill_number": "HB1178",
+  "id": "1959068",
+  "cell": "short_other",
+  "bill_text_sha256": "56fffed57154eebce12ddf8b1ec883afbacf172b195fed2d7ca168219be06aa6",
+  "corpus_sha256": "df2cc9d71ab3aee3cf50c57a2748a922bc3f83206403a98dab58ebb33f5a7d5a",
+  "sample_sha256": "be2411dd73cfcb20c7e55b9fda2aca02a07e05cbf8e8c335a172e6402672d29c",
+  "prompt_sha256": "a8a84c7d3640ce11249e107717a11e24499592c70f24dc2215bc9305b9949889",
+  "format_sha256": "65ee03d0a90267593885b0982684a55a9d7f7d40e7ce2a505d3c3c663a72b3a1",
+  "requested_model": "gpt-6-luna",
+  "returned_model": "gpt-6-luna",
+  "generated_at_utc": "2026-10-17T15:39:16.436671+00:00",
+  "request": {
+    "model": "gpt-6-luna",
+    "instructions": "You are writing a plain-language summary of an as-filed Tennessee House bill for an adult reader without legal training.\n\nUse only the bill text supplied in the user message. Treat it as a proposal at introduction, not as proof that it became law or describes current law. Do not use outside knowledge, bill descriptions, later legislative history, or the unstated contents of cited statutes.\n\nWrite a neutral summary in prose. Start with what the bill would change. Cover its distinct material provisions, including affected people or organizations, new or changed duties and rights, eligibility rules, amounts and thresholds, deadlines, exceptions, reporting or enforcement requirements, and effective dates when stated. Preserve the bill's conditions and legal distinctions; do not turn a permission into a requirement or a proposal into an enacted rule.\n\nUse familiar words and short, complete sentences. Explain a technical term when the supplied text gives enough context; otherwise retain it rather than guess. Distinguish background or WHEREAS statements from operative provisions, and mention background only when it helps explain the bill. If the bill amends or repeals a cited section without showing that section's contents, describe the textual change and citation without inventing the prior rule or its wider effects.\n\nKeep the summary substantially shorter than the source while retaining the main independent changes. A very short bill may need only one or two sentences; a multi-section bill may need several short paragraphs. Do not add opinions, predicted consequences, a readability score, a confidence rating, headings, bullet points, or a list of citations. Return only the fields required by the supplied output schema.\n",
+    "input": "Bill number: HB1178\n\n<bill_text>\nHOUSE BILL 1178\n\n By Sherrell\n\n AN ACT to amend Tennessee Code Annotated, Title 49,\n relative to education.\n\nBE IT ENACTED BY THE GENERAL ASSEMBLY OF THE STATE OF TENNESSEE:\n\n SECTION 1. Tennessee Code Annotated, Section 49-8-117, is amended by deleting\n\nsubsection (c) and substituting:\n\n (c) Upon the request of the education committee of the senate or the committee\n\n of the house of representatives having jurisdiction over subject matters pertaining to\n\n education, the board of regents, a state university board, or the board of trustees of the\n\n University of Tennessee shall provide a report to the requesting committee summarizing\n\n grievance activities of the previous year.\n\n SECTION 2. This act takes effect July 1, 2025, the public welfare requiring it.\n</bill_text>",
+    "reasoning": {
+      "effort": "medium"
+    },
+    "max_output_tokens": 8192,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "pilot_bill_summary_v1",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "properties": {
+            "summary": {
+              "type": "string",
+              "description": "Reader-facing plain-language summary in prose, without a heading or bullet points."
+            }
+          },
+          "required": [
+            "summary"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "store": false
+  },
+  "response": {
+    "id": "resp_0e963986a503dd71016ad396a2f7c087d2831b27d6e13a27d0",
+    "object": "response",
+    "created_at": 1792251555,
+    "status": "completed",
+    "access_programs": null,
+    "background": false,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1792251556,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": "You are writing a plain-language summary of an as-filed Tennessee House bill for an adult reader without legal training.\n\nUse only the bill text supplied in the user message. Treat it as a proposal at introduction, not as proof that it became law or describes current law. Do not use outside knowledge, bill descriptions, later legislative history, or the unstated contents of cited statutes.\n\nWrite a neutral summary in prose. Start with what the bill would change. Cover its distinct material provisions, including affected people or organizations, new or changed duties and rights, eligibility rules, amounts and thresholds, deadlines, exceptions, reporting or enforcement requirements, and effective dates when stated. Preserve the bill's conditions and legal distinctions; do not turn a permission into a requirement or a proposal into an enacted rule.\n\nUse familiar words and short, complete sentences. Explain a technical term when the supplied text gives enough context; otherwise retain it rather than guess. Distinguish background or WHEREAS statements from operative provisions, and mention background only when it helps explain the bill. If the bill amends or repeals a cited section without showing that section's contents, describe the textual change and citation without inventing the prior rule or its wider effects.\n\nKeep the summary substantially shorter than the source while retaining the main independent changes. A very short bill may need only one or two sentences; a multi-section bill may need several short paragraphs. Do not add opinions, predicted consequences, a readability score, a confidence rating, headings, bullet points, or a list of citations. Return only the fields required by the supplied output schema.\n",
+    "max_output_tokens": 8192,
+    "max_tool_calls": null,
+    "model": "gpt-6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "msg_0e963986a503dd71016ad396a3802c87d2995c1cabddbf3bca",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "{\"summary\":\"Beginning July 1, 2025, the bill would require the Board of Regents, a state university board, or the University of Tennessee Board of Trustees to provide a report summarizing the previous year’s grievance activities when requested by the Senate Education Committee or the House committee with jurisdiction over education.\"}"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": false,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "description": null,
+        "name": "pilot_bill_summary_v1",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "summary": {
+              "type": "string",
+              "description": "Reader-facing plain-language summary in prose, without a heading or bullet points."
+            }
+          },
+          "required": [
+            "summary"
+          ],
+          "additionalProperties": false
+        },
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 557,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 74,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 631
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "summary": "Beginning July 1, 2025, the bill would require the Board of Regents, a state university board, or the University of Tennessee Board of Trustees to provide a report summarizing the previous year’s grievance activities when requested by the Senate Education Committee or the House committee with jurisdiction over education.",
+  "generation_status": "completed"
+}

@@ -1,0 +1,163 @@
+{
+  "bill_number": "HB1121",
+  "id": "1957759",
+  "cell": "short_minimal",
+  "bill_text_sha256": "c09beb862993eb2b5cfbb53fe1f2aa24c919ff6863e985a35389f646844a4690",
+  "corpus_sha256": "df2cc9d71ab3aee3cf50c57a2748a922bc3f83206403a98dab58ebb33f5a7d5a",
+  "sample_sha256": "be2411dd73cfcb20c7e55b9fda2aca02a07e05cbf8e8c335a172e6402672d29c",
+  "prompt_sha256": "a8a84c7d3640ce11249e107717a11e24499592c70f24dc2215bc9305b9949889",
+  "format_sha256": "65ee03d0a90267593885b0982684a55a9d7f7d40e7ce2a505d3c3c663a72b3a1",
+  "requested_model": "gpt-6-luna",
+  "returned_model": "gpt-6-luna",
+  "generated_at_utc": "2026-10-17T15:39:10.142655+00:00",
+  "request": {
+    "model": "gpt-6-luna",
+    "instructions": "You are writing a plain-language summary of an as-filed Tennessee House bill for an adult reader without legal training.\n\nUse only the bill text supplied in the user message. Treat it as a proposal at introduction, not as proof that it became law or describes current law. Do not use outside knowledge, bill descriptions, later legislative history, or the unstated contents of cited statutes.\n\nWrite a neutral summary in prose. Start with what the bill would change. Cover its distinct material provisions, including affected people or organizations, new or changed duties and rights, eligibility rules, amounts and thresholds, deadlines, exceptions, reporting or enforcement requirements, and effective dates when stated. Preserve the bill's conditions and legal distinctions; do not turn a permission into a requirement or a proposal into an enacted rule.\n\nUse familiar words and short, complete sentences. Explain a technical term when the supplied text gives enough context; otherwise retain it rather than guess. Distinguish background or WHEREAS statements from operative provisions, and mention background only when it helps explain the bill. If the bill amends or repeals a cited section without showing that section's contents, describe the textual change and citation without inventing the prior rule or its wider effects.\n\nKeep the summary substantially shorter than the source while retaining the main independent changes. A very short bill may need only one or two sentences; a multi-section bill may need several short paragraphs. Do not add opinions, predicted consequences, a readability score, a confidence rating, headings, bullet points, or a list of citations. Return only the fields required by the supplied output schema.\n",
+    "input": "Bill number: HB1121\n\n<bill_text>\nHOUSE BILL 1121\n\n By Sherrell\n\n AN ACT to amend Tennessee Code Annotated, Title 49,\n Chapter 4, relative to financial aid.\n\nBE IT ENACTED BY THE GENERAL ASSEMBLY OF THE STATE OF TENNESSEE:\n\n SECTION 1. Tennessee Code Annotated, Section 49-4-930(c)(2)(A), is amended by\n\ndeleting the subdivision and substituting:\n\n (A) Is a sophomore, junior, or senior in high school; or\n\n SECTION 2. This act takes effect July 1, 2025, the public welfare requiring it.\n</bill_text>",
+    "reasoning": {
+      "effort": "medium"
+    },
+    "max_output_tokens": 8192,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "pilot_bill_summary_v1",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "properties": {
+            "summary": {
+              "type": "string",
+              "description": "Reader-facing plain-language summary in prose, without a heading or bullet points."
+            }
+          },
+          "required": [
+            "summary"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "store": false
+  },
+  "response": {
+    "id": "resp_052d120264169234016ad3969a4e4c87d29e2914d54f664c68",
+    "object": "response",
+    "created_at": 1792251546,
+    "status": "completed",
+    "access_programs": null,
+    "background": false,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1792251550,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": "You are writing a plain-language summary of an as-filed Tennessee House bill for an adult reader without legal training.\n\nUse only the bill text supplied in the user message. Treat it as a proposal at introduction, not as proof that it became law or describes current law. Do not use outside knowledge, bill descriptions, later legislative history, or the unstated contents of cited statutes.\n\nWrite a neutral summary in prose. Start with what the bill would change. Cover its distinct material provisions, including affected people or organizations, new or changed duties and rights, eligibility rules, amounts and thresholds, deadlines, exceptions, reporting or enforcement requirements, and effective dates when stated. Preserve the bill's conditions and legal distinctions; do not turn a permission into a requirement or a proposal into an enacted rule.\n\nUse familiar words and short, complete sentences. Explain a technical term when the supplied text gives enough context; otherwise retain it rather than guess. Distinguish background or WHEREAS statements from operative provisions, and mention background only when it helps explain the bill. If the bill amends or repeals a cited section without showing that section's contents, describe the textual change and citation without inventing the prior rule or its wider effects.\n\nKeep the summary substantially shorter than the source while retaining the main independent changes. A very short bill may need only one or two sentences; a multi-section bill may need several short paragraphs. Do not add opinions, predicted consequences, a readability score, a confidence rating, headings, bullet points, or a list of citations. Return only the fields required by the supplied output schema.\n",
+    "max_output_tokens": 8192,
+    "max_tool_calls": null,
+    "model": "gpt-6-luna",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_052d120264169234016ad3969b042c87d2b57f3715c7a3e046",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABq05aeGZXCz8uC7HWVBQRFY67iMChDsaMT11DwfKoDPaZ5LlRk3siNxRBAn7KPYWJhNvZ-dzJQFFt2wRvMON0_jLw9EAlIpN1K4fkSEIWBLk2XShZtAVqVBzfagYPIFaKUzNvkdRI-AlHNV7uLoGNthr0v6K0zDkvXr-7oxn4_bZWbABC8puLi_IF--8_ukmCZXxM0k7UISFPyVfw40d6wkrUkmPMrp7r7lB_P2ZPN99qfKv-AyyPo8MEhbRZfDgxuIqYRzRdntuatPKsa3Uzy_987c_7VckOgcN_bV1kM63rBgowdYYy5tda5XVsGWXwa9xHKM0QacFjmI93WNIeI4ykkuF-gN1SwsEtJgGiXn6cAX3I6rwlVAc2NyVAD6xE8GqqQDmq3KMtAaJUQB94uxswGKSh_Tyt7_Of6HZzCIpwDyXuGOU2hUtJPlXOLndX2Htu_D_R1oaGWkiSiu6H-NRea9DjQ3VWNWb9DV1YVIJBFfFHs-N1DdK7xiHL0iCCubLd54HTvHf9O9ZuhNKm7LVIclVeX5KLmoYX-99yPH64JcjlCVHZqI1eSlW5D1LH1DzCYJEmfLzi_NTciKs5qfeevm5xLky-KnJZHzvA4mN94dVFdVe6Ypnct7a7ihxL7kFS7z0eXCRliPxPG3WMadkLSwBHpSkn66NGRci4X_4R35ZIj-qRytHqdkEOnX1p4IelFGESjpzcf3nwk9fI16mQMDpOog7eHcS4FOERWJj8ALK7uVbQUKuK-8RxmHelMSwq5d4Nwg2iUOys2y9-BtuRu_PvpDkMc4_rmVBGa73rZT8ij7HK4TKxuO46UrJ3AuldeLbWB8-VifjnT--1rCbNERi8WebGsMG3uGSILgZ2E0LscZesxGn6zw7Y-d3YcwRynGaH2Mi7EZSAb6XOSfhWPMmS9tIVZZ58__bLQZNUTwVUVrvwvvNdPLl15oB_Z6LptywGw_CnlGpU4jFSjy4PwFrJP9V1htMjBf82_UUQypVPsZUaTfM_WQ7sDw1kweNHrT7ApA8kSGj-6_wPYs6fTNL8ST9ZG8OYXkIdPbiFmpkdpWzv1nsdi9UTUlO0W_zVM8fSxsCahI5tMV28MfnialmSzk4HIF0t9vGdu0r2eVcAGBW0PDd8f_w8VJSSAHqEAMOvDcXNbqDXprq75RGt59ydveSl2RHnXLZZT5bbroJ0ePWL31bPkC6t54MtLFkw0NL2KedFcR2-QZ38IlbES2orSsNVVsbEhBh7Ue5TeUhEKlZnxRPVADD-4iS7w-2WzHl1sNvgC6TYx8bawwfD9QrREZw8IAOeSsCbRxEdbLVkBOVy_N44n5nAGtaWVpBhHt8K7h8SbAjr3GIeaHN03SM8OxJ1ONiFx9J_7GPUhOH21PE1BPwn3kES8jRzXM8FeT1LpmrdHtTWC19y76bi8uKJSEnFOt4N3oMx8VESw4Rml5o2-cX6_Aapa2YyW9GHIATiokgUr-Ra5o-fdKxCF8cbuE6c6HfdOhRTLhmY4BeT0RxdzXJU8bdk6Y5NvhRbqE07SntqCweXlxoHatvbaAJgl72P_6RSvvfp0zNWicTHdXA0V7r0OMKKe9IMfnN9f-6JU5FXIss-dPmQdLYliCdKgnOmUalSfJeJwTnKKr1rAUb9tx6s0UXqbqi5r0lErpzjGTUGE5ClD5sm6bpaJYsaFAynVddPqfYuwXjUeuFi0KiteHng1Kx-OmKOCUylz-LwDImGgSiVAq91NAF0lN1ZS7GpuBAYMkhZF90WNfbxE3V3ludftULPfDNExkd5DNTQu7qqAdbbzAd25JpZ9PhnLbl37-QCkd-TNUgcCLTnHOrgTOWU3v3XLF-hjO11p0Lbky8_hOnVy8d3k-6YhKjtBxcOY4f3mjTZBlVtMDEId_SWkspCabBqgrJZurbWxKw4zFGOZYh-6BXfUIGf0t3uGFy3gZH3UOwgscC1WtufO_S82M80fMKSXzHH_XAu6IEtiESv2O3ggzqkxWzIrM3EA9myEd93P1ctZUvFse6FN4UjWFpvrnUDszXHZfTY6sL3FazUVJw-nlxFqAQXARR48QzbQD7bBTtfewAT48G1rpZJPLQKv7G55BGbmJNwxmq9jAnrAbI59IdQyI_uiul9cW-LumLAv20UKtc03aDCk4Rqf7HrDdVliux_m-O3CxxFIXCboIlVnYcae2r-sHmYOIclGoEiUConc2a0GM6nyJ6xrVGc8lt9rwasSGdc_yCEpuqisz3zTlHAO0ZX9jVwh4XzUXvm42ECLJDpn4r2Nsy0WfcLB8mBzhSkeGOR0LeHk-JDNnsklNSLh0Umw96AkEi5hmHecsewHF7DSY4svJHiCZvSN_TvQcadi3apevwOUqVQKR5o3tAseaHsD-aDoHwayKmDLGCnrh1Rm7bkaGRM05rFU-elrXO5d4L1TT9jVJBZIl1_5Jt86-f2XIcqj1zgDO2yg5YXLzI6jyK-JnF-d_70TB6R-8f9JBIGVg7Sw9WHYO71iOYwKeAK2XIeRwR127d1tU9AzF127bmeVh3cHjJb_1PDBkiDrl9iHGp9RsIigZDo7jbImGGfazJRu5kcVcfpMDGtSh38h90u8lItXV46Nm_YmkYGGBcjp6AkH2-LlUGwLKisYPvn2atLuTe_ChtMP4yHrOe1g5xG06Hy50S1lQhqgObK1iAXg7ppAYwgGFomYm7s52DsEzg7cfdbkKPkZs2K3bHhLPzKWWhIYI2ERHMtBllhZAwk9orZ5sGPUi-DQUDxs95VZ03RsPpUNQ5uac3kFXViuwgSCY05rnPKp4AAyoVcQfQtLHSiAvhLiyRR_B0gkS0bPNcoDKh-ZlHu1Qrua0HIg7ioU1hduVXoMqGb5AxIeFO-SvqJTZtJU_BVStjtUoKLJDLZeeZXLWvQXrSOT4FY7MtJDWx4QGRhkvlHpagc-gaOzbNdqttIz-gcdFdHgJOT28gTLQlC-8Zs15IYEMI4mub2_MkSYPnvE40iaGpNgzIP7OGuSb46SWmR7qzNm-JvfM6ijAud_TJPbaobgfnOy1MoiDD1jcuOGy21-fdMcekcxPhFGyn1nt7eaCQ3wDYNsLNXVBx-U9WAOyS7l1UNkoLZJeiqTSgX-d54mcUVVUvmxqUJ51OPdQQdnG9VY4XRAK0G-eZUFbqTrzRaGBQx8vcI70dEp-gMfDv1hdC4jP5eNTIXOS81V6ghH8KY5sX3njpgCJLecJgF-GmbcjSqko25pf7GYoMEh_W2Trv9RLmZyeWRFWfQRUMim_7g01VL4wUbVq4uvvs523FeVTdyn92usvP9QI9INjYE2yDxyaAgZRhUkyEWQorPhkwbdWFlm4XXftt0_vh_a12pLIdqc8pfaj3PK-8EZZlRuqCGorkmiRtCPkeN2Q9Yd-alxqtGhlMeGSG5UHPvobfCMRhuJiZ6ynt43otoxDiKBBUDpcUL7NUwaj5gLoDGj-QZ3jG48FTz3XpaJcyl6Nrc4fBDWUO5mA68Z7r_QzlfQ_7t6opMhPTjwrYqWL-A5U9Im0O0g7hIej710d-OJnHajx6y3xqtqhkUDkvzdEFXE7xIkrdomf-d00Nykf8NeVLGPGuT7tdJeiYwOHRClRY1tT-vtrIYcNHHTuPmxQT3MdnxF3VTtDkJhAUgOWJ1r71YOnKP4Hr4joG6IMmSKgfHoXo9Yw6u_cTuGddqQ7EXVY69qgSVl",
+        "summary": []
+      },
+      {
+        "id": "msg_052d120264169234016ad3969d02dc87d2b919697d6414089d",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "{\"summary\":\"The bill would amend a financial-aid provision in Tennessee Code Annotated, Section 49-4-930(c)(2)(A), to state that a person is a sophomore, junior, or senior in high school. The clause ends with “or,” indicating it is one of multiple alternatives in the provision; the bill does not show the other alternatives or the current wording being replaced. The change would take effect July 1, 2025.\"}"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": false,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "description": null,
+        "name": "pilot_bill_summary_v1",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "summary": {
+              "type": "string",
+              "description": "Reader-facing plain-language summary in prose, without a heading or bullet points."
+            }
+          },
+          "required": [
+            "summary"
+          ],
+          "additionalProperties": false
+        },
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 510,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 280,
+      "output_tokens_details": {
+        "reasoning_tokens": 172
+      },
+      "total_tokens": 790
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "summary": "The bill would amend a financial-aid provision in Tennessee Code Annotated, Section 49-4-930(c)(2)(A), to state that a person is a sophomore, junior, or senior in high school. The clause ends with “or,” indicating it is one of multiple alternatives in the provision; the bill does not show the other alternatives or the current wording being replaced. The change would take effect July 1, 2025.",
+  "generation_status": "completed"
+}

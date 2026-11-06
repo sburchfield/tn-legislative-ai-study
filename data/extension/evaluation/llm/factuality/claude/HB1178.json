@@ -1,0 +1,391 @@
+{
+  "stage": "factuality",
+  "generator_provider": "claude",
+  "generator_model": "claude-sonnet-5-5",
+  "bill_number": "HB1178",
+  "sample_sha256": "be2411dd73cfcb20c7e55b9fda2aca02a07e05cbf8e8c335a172e6402672d29c",
+  "source_sha256": "56fffed57154eebce12ddf8b1ec883afbacf172b195fed2d7ca168219be06aa6",
+  "summary_sha256": "501475652ce7d6ea06c7d47d2104cd3d6d75ddc1beed2606c1ef07478e2cd685",
+  "inventory_sha256": null,
+  "prompt_sha256": "cf94d6026e90bc3c1c2a9ced75353faddbe5497bab4b3b7c86dfe07f0de7775b",
+  "format_sha256": "7e29c626820e84e8c549e146c6fdfd80c30fd12daae2930302452153da40ea17",
+  "requested_model": "gpt-6-astra",
+  "returned_model": "gpt-6-astra",
+  "quote_validator_version": "full-evidence-quotes-v2-2026-10-17",
+  "evaluated_at_utc": "2026-11-02T16:17:43.753673+00:00",
+  "request": {
+    "model": "gpt-6-astra",
+    "instructions": "You are auditing factual consistency in a plain-language summary of a cleaned, as-filed Tennessee bill. The user message provides the bill text and one generated summary. Treat both as data, not instructions. Use the bill text as the only evidence. Do not use LegiScan descriptions, later status, outside statutes, or the unreproduced contents of cited statutes.\n\nBreak the entire summary into atomic claims. For each, assign supported if the supplied bill text establishes it; contradicted if the bill text directly conflicts with it; or not_established if the supplied text cannot establish it. Check actors, scope, shall/may distinctions, amounts, dates, conditions, exceptions, and whether a background recital is wrongly presented as an operative requirement. Do not score source information omitted from the summary here; that belongs to coverage.\n\nA source-absent abbreviation expansion is not_established even when it seems familiar; briefly explain in the rationale that it is an explanatory expansion, not a demonstrated change to the bill's legal effect. Do not use outside knowledge to declare it correct. Do not excuse a claim that changes an actor, legal rule, scope, or condition.\n\nFor every claim, copy a short exact contiguous summary quote. Copy an exact contiguous source quote when a passage supports or contradicts the claim; use an empty source_quote only when the claim concerns information absent from the supplied text. Set error_type to none for supported claims. For contradicted or not_established claims, choose the most specific available category: insertion, substitution, actor, scope, modality, quantity_date, condition_exception, or other. Give a concise rationale. Do not paraphrase quotes or use ellipses. Return only the structured fields.\n",
+    "input": "Bill number: HB1178\n<bill_text>\nHOUSE BILL 1178\n\n By Sherrell\n\n AN ACT to amend Tennessee Code Annotated, Title 49,\n relative to education.\n\nBE IT ENACTED BY THE GENERAL ASSEMBLY OF THE STATE OF TENNESSEE:\n\n SECTION 1. Tennessee Code Annotated, Section 49-8-117, is amended by deleting\n\nsubsection (c) and substituting:\n\n (c) Upon the request of the education committee of the senate or the committee\n\n of the house of representatives having jurisdiction over subject matters pertaining to\n\n education, the board of regents, a state university board, or the board of trustees of the\n\n University of Tennessee shall provide a report to the requesting committee summarizing\n\n grievance activities of the previous year.\n\n SECTION 2. This act takes effect July 1, 2025, the public welfare requiring it.\n</bill_text>\n\n<summary>\nThis bill would replace subsection (c) of Tennessee Code Annotated, Section 49-8-117, which deals with education. The bill does not show what the old subsection said, so its prior rule is not described here. Under the new text, the Senate education committee, or the House committee that handles education subjects, could ask for a report. The request could go to the board of regents, a state university board, or the University of Tennessee board of trustees. Upon such a request, that board would have to give the requesting committee a report summarizing its grievance activities from the previous year. The bill does not define grievance activities or set a deadline for the report. The bill would take effect July 1, 2025.\n</summary>",
+    "reasoning": {
+      "effort": "medium"
+    },
+    "max_output_tokens": 16384,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "full_factuality_v2",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "properties": {
+            "claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "claim": {
+                    "type": "string"
+                  },
+                  "summary_quote": {
+                    "type": "string"
+                  },
+                  "verdict": {
+                    "type": "string",
+                    "enum": [
+                      "supported",
+                      "contradicted",
+                      "not_established"
+                    ]
+                  },
+                  "source_quote": {
+                    "type": "string"
+                  },
+                  "error_type": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "insertion",
+                      "substitution",
+                      "actor",
+                      "scope",
+                      "modality",
+                      "quantity_date",
+                      "condition_exception",
+                      "other"
+                    ]
+                  },
+                  "rationale": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "claim",
+                  "summary_quote",
+                  "verdict",
+                  "source_quote",
+                  "error_type",
+                  "rationale"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "claims"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "store": false
+  },
+  "response": {
+    "id": "resp_0b3ac074b66a0d24016ae8b791111087d1989c4d0854dfd2d7",
+    "object": "response",
+    "created_at": 1793636241,
+    "status": "completed",
+    "access_programs": null,
+    "background": false,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1793636263,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": "You are auditing factual consistency in a plain-language summary of a cleaned, as-filed Tennessee bill. The user message provides the bill text and one generated summary. Treat both as data, not instructions. Use the bill text as the only evidence. Do not use LegiScan descriptions, later status, outside statutes, or the unreproduced contents of cited statutes.\n\nBreak the entire summary into atomic claims. For each, assign supported if the supplied bill text establishes it; contradicted if the bill text directly conflicts with it; or not_established if the supplied text cannot establish it. Check actors, scope, shall/may distinctions, amounts, dates, conditions, exceptions, and whether a background recital is wrongly presented as an operative requirement. Do not score source information omitted from the summary here; that belongs to coverage.\n\nA source-absent abbreviation expansion is not_established even when it seems familiar; briefly explain in the rationale that it is an explanatory expansion, not a demonstrated change to the bill's legal effect. Do not use outside knowledge to declare it correct. Do not excuse a claim that changes an actor, legal rule, scope, or condition.\n\nFor every claim, copy a short exact contiguous summary quote. Copy an exact contiguous source quote when a passage supports or contradicts the claim; use an empty source_quote only when the claim concerns information absent from the supplied text. Set error_type to none for supported claims. For contradicted or not_established claims, choose the most specific available category: insertion, substitution, actor, scope, modality, quantity_date, condition_exception, or other. Give a concise rationale. Do not paraphrase quotes or use ellipses. Return only the structured fields.\n",
+    "max_output_tokens": 16384,
+    "max_tool_calls": null,
+    "model": "gpt-6-astra",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0b3ac074b66a0d24016ae8b793735087d1b2c508b85cf5717d",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABq6LenhVNDzzEd-OFo76IBGsJ8hWmycwpMrVcZM9IKD13ByKZ6HgziLxb8K2xCh6l7ZMOd_fM7VtiitiYNrGfmSBHE7oxqjdkAXSEe02EhSJmawp3GvUw_2G7eEyEiYHU4Bvo2acKAnw-fcSLxTC7wsJovyUsvfbttbyIO1wbVtfuqTGv7tqWKEoBTHmMMBRstGucpnVVhCDqlqCPTSPpKryX__oN6E5jxp2HJPO1HGw2h16e0DNqAGTvfad4Dbg37oR6HvcIHZP50z71dLXvA34BfVr12nkzmh7FYPfdcFhpET5z4fgaKudQ58ecfA0KGB7V41TBSTzf6G3w61fEct_ubFQcegqqf79XrZw0-JvqMFETz4jBGFHJVX7U-VqZxHmqSNK0vg_UZGsZQmKgvuXemfoKWP4r_vjDFryFURSuYP4n-IeQjLIbw2vFBOw41I5zGiyDlxYm1c38v5vRrwacyxN-l3BsaIaiWrouwQ_xcOCEt3R2Ye65gQbRU9PQsRUnyg4HXI2hwKVGCz2zgfVov8dIjRTWFjYOufo-dgBvUvBH8bijLnvShNwLZ6f3dfU0R2esxl1mzH5zZhxUunow0b36swawA8mGcTU0AwJ96o2fzwwKhNywTz0EJuEZzpHx2rKBWqe0mYhT_9_Cin4LQuquZO4FKKoL9BAjwxpCRxBFb4Mdxma7RnwP3aEdfF7AvSYjLxskhcs2VZngCPAUBlEZOD3xsS3an0bgEG4DNOiZicZW6LQCH8KC4Puh1V5vdzkMX3LdMlnoY-utzlTpjQl-N5qZEpsotW66cIMtDH9VNqPlTxFKicnbpjQMCYIn6gKYWo4qbQ8j1AMa23CQdkMeVdM3Cvgg8wkMTscQX6FHMOHZhrPFD_E1aJA2o_3AN89NGskQRu944P1i9CibDQmXIlsRZDQnrd4GOQaB6YbKpJ03WwJs0yckEGHjbYVCCCjhBAIEVFKfgDJaeYNiwaJNLNbOx4b39X7vQ_OCVAA0ds-3LvrLlH0O5kxqncVZzf_Ub3kBKdmo832MLbbLvvMzyaAPRlnSDMANT2EKoXFB5VU3TfzHhJbgdgdj9ixt8l2jzUyyftuMqrIKCZImGgFYMtd_AS8evlW0R61UwrorKtKLIcXakcSEH0I8ZLjptViT11S1wpTM3yq78WUM_ZHqcBkIRgsvfn93NXcHY5nuEYKx7DI4aBe_ozepdfGAy59MZDctAm0KUl0Lb0RyZnkZ_E5pPTd8To1YMImLSeYb4oxGDK_n2nP-d9D5fBfWKWC4_NdLGgm5KSgO8K9J8imw-tABkWsWqfwYNB-5cfY7-SRxLCm2eWTtBgr5hzDVUH-RjSor0KMiCDVErrLgixnTeZNFXVL4P_Im94eZGdLPLwCkwy-70t3TxPcC74WnaddyC7UWIIO7KYLfVVTmcRnv-IV58WktgJoFUrWGPoMHk-grLvGyklIFhiqPC9TFXIUAY2KguZAp5SltNaXCIeeczxS6fPXF0Xwz-EivaeF63bkBF_6B8Gwda5AKZJ2s17v353SodHzV6U67kZwnyq2mBPKTuPU2ZjqvbO_Ez1Mwoqd6AVGQodO8q9rFw0oU971-YvQXHThLVieeI1onGAb0wQxubvsVpofa4yCjtzoVLTfbJRNwth4Qi8-CFoA-UErdmA1I4lkZ0h5XrCDCBgY3JqnWN6BhU793T001SmqPxgEOIjq3iiqowBvnoJ23bxi1uBwNeMLJoYKfU7RQ9H4TW6ghf41mJiaBHu_QKLfljpGjXNav4fAp-NpNDX95gR8GbLqRIGyVb-NzBEjndQJFMrxQkwLw5CmMXCsnPP6ALaxJH1hV0Dh2E6IYI7GQ0fmDc04aff9UnSgIpN4tHr3__UqhE1g29SOxx7-7FSOjXNi8ZdSvoG5uQbq7NFtpu-Z2Iy_wYGVoxQm6kIxHxI5sZMxAtW6zoTUT60wGnpfaU6-4YKA3JajWS4VNCYLka_9H3TphLm7O1fHVJ12hQkDPFREEEiluH6QWViCfOStlp7nVfPbPHXXoFOzjKbyzIbhLTCsrKGd_KsLdPEm9xWXD6VOlteG3fmAHXCdr9bVvNV4CNGa_XWZSGllksPPp8ucrc5cjaE-r1YRObOLuxQixtHyb9AWY_NrCBAF3xnhDLBBeWDgNlmm_EiGzk-WJE1a_NpFiWHjiqaTMPlBXWhxyNFPg43iP1syf9vcTJ_iUBY_rgK8mfMBAf5mosieCyRlLdtDlT85GRjRqarKWZe1T9BsrJrfbMfdiDjsA0FDpz6Q3P4md294jb-A4RPi6XMuIS77y0QjQze-r_U3TYhE8oTYWVszbIM1hR_3wGfXfBlRSPOAuPH98EVGVGSLjve75sXvy0Cv9aAOWSLWRxHBGpiGad9xvQhrF2HiS7IZrJ2KfuSxMLY001nCQeSbB_sqjE_bLywTiBkRsrwSRrq7JZUeVJt5ipTpaAa8vg9-g1q9PUP6w44MamS54JXf_oVxcWVrB4SxI-d9jjHHHGHjdlYnW4epCxYfP2SOpE0N3t-aV4UgZpIiSTeCaSYb7p-gAdH37KCD_h9iqg6ifbLwaalQEKrCXtemut4tb58FxsVaumul6EjrHgccGimfRNAITFPixmjqas5YJIvFmgXyZcBjJsnO6EjYrrBOl2R653SNHAkfvhoxbQ4lWPF_494WngjsX3mE4JC8E6DDzcKcdbaLV_F9HPdV2JbD9UwT-P_KPg8yplgXIFNK5Qi_vzeYi1ABl16lqJsfl3cY0ZHV56WiwF7y6ECEa4s9it6T6ofkGXaZ55SVzVr1ynLMJ-RTfdluAbaUFBJOed7didRKB_e-ol-3RveJIM2iLiy6Ja3cZyOe6ntqFW_kCoDhTapf67GG-UfnnNLyCytS5t161hBNWji1DhxJRA_cgkT7DdONmlOQUGiRgUQ6htLfW86GF_Y9jMC5BIOyFpKU_wcwaz_rwZh8lLdSdkITwMPXeMXgSL0cnDxxdqKy5vxEvxpdgdCV47p-X0sCK1rdSrQg1YuEoS3u1e-VqeTPSia1hFFdxM2uH2acvsEkOo80urhp6e406NhAK3K3Sm7dxFowhxUveJXkGMMmIljnlCGopQUpFkil07BwFf-oA0oivq2mvzh8mTAYKC6hSgLI8nLMDJhIs0NmsnAA8FczJfjjj7s_OS6Cccg2jZiuuitHxj6f4Glo6HQNtCzRdO1xSRKBnYnwnUDOT29CL15t3ewVL4pniASmfaDpkq-17lveJryVGYpDSnhovbgxEWHhFPVodBk3hKuSi7dzLBte6GaLSheZ1726YEdJPAro4AyIU4FRJDgiFfkWXMpAp9fQjSWT_Y5zwAKYaa7CoCpcDfxk5jgBeW28OGD0Kn57aFTC0yBssFnwgEjAqmcUYKKjC4CA==",
+        "summary": []
+      },
+      {
+        "id": "msg_0b3ac074b66a0d24016ae8b799228887d18009062e2419c2db",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "{\n  \"claims\": [\n    {\n      \"claim\": \"The bill would replace subsection (c) of Tennessee Code Annotated, Section 49-8-117.\",\n      \"summary_quote\": \"This bill would replace subsection (c) of Tennessee Code Annotated, Section 49-8-117\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"SECTION 1. Tennessee Code Annotated, Section 49-8-117, is amended by deleting\\n\\nsubsection (c) and substituting:\",\n      \"error_type\": \"none\",\n      \"rationale\": \"Section 1 expressly deletes and substitutes subsection (c).\"\n    },\n    {\n      \"claim\": \"The provision concerns education.\",\n      \"summary_quote\": \"which deals with education\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"AN ACT to amend Tennessee Code Annotated, Title 49,\\n relative to education.\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The act identifies education as its subject, and the replacement text addresses education committees and university boards.\"\n    },\n    {\n      \"claim\": \"The bill does not reproduce the old subsection.\",\n      \"summary_quote\": \"The bill does not show what the old subsection said\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"SECTION 1. Tennessee Code Annotated, Section 49-8-117, is amended by deleting\\n\\nsubsection (c) and substituting:\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The bill provides replacement language without reproducing the deleted language.\"\n    },\n    {\n      \"claim\": \"The summary does not describe the prior rule.\",\n      \"summary_quote\": \"so its prior rule is not described here\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"\",\n      \"error_type\": \"none\",\n      \"rationale\": \"This accurately states the summary's limitation; it makes no substantive assertion about the unreproduced prior rule.\"\n    },\n    {\n      \"claim\": \"The Senate education committee could request a report under the replacement provision.\",\n      \"summary_quote\": \"the Senate education committee, or the House committee that handles education subjects, could ask for a report\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"Upon the request of the education committee of the senate\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The provision expressly makes a request from this committee a trigger for reporting.\"\n    },\n    {\n      \"claim\": \"The House committee with jurisdiction over education subjects could request a report.\",\n      \"summary_quote\": \"the Senate education committee, or the House committee that handles education subjects, could ask for a report\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"or the committee\\n\\n of the house of representatives having jurisdiction over subject matters pertaining to\\n\\n education\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The summary accurately identifies the eligible House committee.\"\n    },\n    {\n      \"claim\": \"The request could be directed to the board of regents.\",\n      \"summary_quote\": \"The request could go to the board of regents\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"the board of regents, a state university board, or the board of trustees of the\\n\\n University of Tennessee shall provide a report\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The board of regents is expressly among the boards subject to the reporting requirement.\"\n    },\n    {\n      \"claim\": \"The request could be directed to a state university board.\",\n      \"summary_quote\": \"a state university board\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"the board of regents, a state university board, or the board of trustees of the\\n\\n University of Tennessee shall provide a report\",\n      \"error_type\": \"none\",\n      \"rationale\": \"A state university board is expressly among the boards subject to the reporting requirement.\"\n    },\n    {\n      \"claim\": \"The request could be directed to the University of Tennessee board of trustees.\",\n      \"summary_quote\": \"the University of Tennessee board of trustees\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"the board of trustees of the\\n\\n University of Tennessee shall provide a report\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The summary identifies the same board named in the bill.\"\n    },\n    {\n      \"claim\": \"Upon a qualifying request, the board must provide a report.\",\n      \"summary_quote\": \"Upon such a request, that board would have to give the requesting committee a report\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"(c) Upon the request of the education committee of the senate or the committee\\n\\n of the house of representatives having jurisdiction over subject matters pertaining to\\n\\n education, the board of regents, a state university board, or the board of trustees of the\\n\\n University of Tennessee shall provide a report\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The summary preserves both the request condition and the mandatory force of 'shall.'\"\n    },\n    {\n      \"claim\": \"The report must be provided to the requesting committee.\",\n      \"summary_quote\": \"give the requesting committee a report\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"shall provide a report to the requesting committee\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The recipient is stated exactly in the operative provision.\"\n    },\n    {\n      \"claim\": \"The report must summarize the board's grievance activities.\",\n      \"summary_quote\": \"a report summarizing its grievance activities\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"shall provide a report to the requesting committee summarizing\\n\\n grievance activities of the previous year.\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The summary accurately describes the subject of the board's required report.\"\n    },\n    {\n      \"claim\": \"The report covers the previous year.\",\n      \"summary_quote\": \"from the previous year\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"grievance activities of the previous year.\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The reporting period matches the bill.\"\n    },\n    {\n      \"claim\": \"The bill does not define grievance activities.\",\n      \"summary_quote\": \"The bill does not define grievance activities\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The supplied bill uses the term without providing a definition.\"\n    },\n    {\n      \"claim\": \"The bill does not set a deadline for providing the report.\",\n      \"summary_quote\": \"or set a deadline for the report\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The supplied text specifies a request trigger and reporting period but no delivery deadline.\"\n    },\n    {\n      \"claim\": \"The bill would take effect July 1, 2025.\",\n      \"summary_quote\": \"The bill would take effect July 1, 2025.\",\n      \"verdict\": \"supported\",\n      \"source_quote\": \"SECTION 2. This act takes effect July 1, 2025, the public welfare requiring it.\",\n      \"error_type\": \"none\",\n      \"rationale\": \"The stated effective date matches Section 2.\"\n    }\n  ]\n}"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": false,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "description": null,
+        "name": "full_factuality_v2",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "claim": {
+                    "type": "string"
+                  },
+                  "summary_quote": {
+                    "type": "string"
+                  },
+                  "verdict": {
+                    "type": "string",
+                    "enum": [
+                      "supported",
+                      "contradicted",
+                      "not_established"
+                    ]
+                  },
+                  "source_quote": {
+                    "type": "string"
+                  },
+                  "error_type": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "insertion",
+                      "substitution",
+                      "actor",
+                      "scope",
+                      "modality",
+                      "quantity_date",
+                      "condition_exception",
+                      "other"
+                    ]
+                  },
+                  "rationale": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "claim",
+                  "summary_quote",
+                  "verdict",
+                  "source_quote",
+                  "error_type",
+                  "rationale"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "claims"
+          ],
+          "additionalProperties": false
+        },
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 814,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 1725,
+      "output_tokens_details": {
+        "reasoning_tokens": 141
+      },
+      "total_tokens": 2539
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "parsed": {
+    "claims": [
+      {
+        "claim": "The bill would replace subsection (c) of Tennessee Code Annotated, Section 49-8-117.",
+        "summary_quote": "This bill would replace subsection (c) of Tennessee Code Annotated, Section 49-8-117",
+        "verdict": "supported",
+        "source_quote": "SECTION 1. Tennessee Code Annotated, Section 49-8-117, is amended by deleting\n\nsubsection (c) and substituting:",
+        "error_type": "none",
+        "rationale": "Section 1 expressly deletes and substitutes subsection (c)."
+      },
+      {
+        "claim": "The provision concerns education.",
+        "summary_quote": "which deals with education",
+        "verdict": "supported",
+        "source_quote": "AN ACT to amend Tennessee Code Annotated, Title 49,\n relative to education.",
+        "error_type": "none",
+        "rationale": "The act identifies education as its subject, and the replacement text addresses education committees and university boards."
+      },
+      {
+        "claim": "The bill does not reproduce the old subsection.",
+        "summary_quote": "The bill does not show what the old subsection said",
+        "verdict": "supported",
+        "source_quote": "SECTION 1. Tennessee Code Annotated, Section 49-8-117, is amended by deleting\n\nsubsection (c) and substituting:",
+        "error_type": "none",
+        "rationale": "The bill provides replacement language without reproducing the deleted language."
+      },
+      {
+        "claim": "The summary does not describe the prior rule.",
+        "summary_quote": "so its prior rule is not described here",
+        "verdict": "supported",
+        "source_quote": "",
+        "error_type": "none",
+        "rationale": "This accurately states the summary's limitation; it makes no substantive assertion about the unreproduced prior rule."
+      },
+      {
+        "claim": "The Senate education committee could request a report under the replacement provision.",
+        "summary_quote": "the Senate education committee, or the House committee that handles education subjects, could ask for a report",
+        "verdict": "supported",
+        "source_quote": "Upon the request of the education committee of the senate",
+        "error_type": "none",
+        "rationale": "The provision expressly makes a request from this committee a trigger for reporting."
+      },
+      {
+        "claim": "The House committee with jurisdiction over education subjects could request a report.",
+        "summary_quote": "the Senate education committee, or the House committee that handles education subjects, could ask for a report",
+        "verdict": "supported",
+        "source_quote": "or the committee\n\n of the house of representatives having jurisdiction over subject matters pertaining to\n\n education",
+        "error_type": "none",
+        "rationale": "The summary accurately identifies the eligible House committee."
+      },
+      {
+        "claim": "The request could be directed to the board of regents.",
+        "summary_quote": "The request could go to the board of regents",
+        "verdict": "supported",
+        "source_quote": "the board of regents, a state university board, or the board of trustees of the\n\n University of Tennessee shall provide a report",
+        "error_type": "none",
+        "rationale": "The board of regents is expressly among the boards subject to the reporting requirement."
+      },
+      {
+        "claim": "The request could be directed to a state university board.",
+        "summary_quote": "a state university board",
+        "verdict": "supported",
+        "source_quote": "the board of regents, a state university board, or the board of trustees of the\n\n University of Tennessee shall provide a report",
+        "error_type": "none",
+        "rationale": "A state university board is expressly among the boards subject to the reporting requirement."
+      },
+      {
+        "claim": "The request could be directed to the University of Tennessee board of trustees.",
+        "summary_quote": "the University of Tennessee board of trustees",
+        "verdict": "supported",
+        "source_quote": "the board of trustees of the\n\n University of Tennessee shall provide a report",
+        "error_type": "none",
+        "rationale": "The summary identifies the same board named in the bill."
+      },
+      {
+        "claim": "Upon a qualifying request, the board must provide a report.",
+        "summary_quote": "Upon such a request, that board would have to give the requesting committee a report",
+        "verdict": "supported",
+        "source_quote": "(c) Upon the request of the education committee of the senate or the committee\n\n of the house of representatives having jurisdiction over subject matters pertaining to\n\n education, the board of regents, a state university board, or the board of trustees of the\n\n University of Tennessee shall provide a report",
+        "error_type": "none",
+        "rationale": "The summary preserves both the request condition and the mandatory force of 'shall.'"
+      },
+      {
+        "claim": "The report must be provided to the requesting committee.",
+        "summary_quote": "give the requesting committee a report",
+        "verdict": "supported",
+        "source_quote": "shall provide a report to the requesting committee",
+        "error_type": "none",
+        "rationale": "The recipient is stated exactly in the operative provision."
+      },
+      {
+        "claim": "The report must summarize the board's grievance activities.",
+        "summary_quote": "a report summarizing its grievance activities",
+        "verdict": "supported",
+        "source_quote": "shall provide a report to the requesting committee summarizing\n\n grievance activities of the previous year.",
+        "error_type": "none",
+        "rationale": "The summary accurately describes the subject of the board's required report."
+      },
+      {
+        "claim": "The report covers the previous year.",
+        "summary_quote": "from the previous year",
+        "verdict": "supported",
+        "source_quote": "grievance activities of the previous year.",
+        "error_type": "none",
+        "rationale": "The reporting period matches the bill."
+      },
+      {
+        "claim": "The bill does not define grievance activities.",
+        "summary_quote": "The bill does not define grievance activities",
+        "verdict": "supported",
+        "source_quote": "",
+        "error_type": "none",
+        "rationale": "The supplied bill uses the term without providing a definition."
+      },
+      {
+        "claim": "The bill does not set a deadline for providing the report.",
+        "summary_quote": "or set a deadline for the report",
+        "verdict": "supported",
+        "source_quote": "",
+        "error_type": "none",
+        "rationale": "The supplied text specifies a request trigger and reporting period but no delivery deadline."
+      },
+      {
+        "claim": "The bill would take effect July 1, 2025.",
+        "summary_quote": "The bill would take effect July 1, 2025.",
+        "verdict": "supported",
+        "source_quote": "SECTION 2. This act takes effect July 1, 2025, the public welfare requiring it.",
+        "error_type": "none",
+        "rationale": "The stated effective date matches Section 2."
+      }
+    ]
+  },
+  "evaluation_status": "completed"
+}

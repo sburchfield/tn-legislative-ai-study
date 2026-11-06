@@ -1,0 +1,85 @@
+{
+  "provider": "gemma",
+  "bill_number": "HB2391",
+  "id": "2105786",
+  "cell": "medium",
+  "tertile": "medium",
+  "bill_text_sha256": "41467128f31b348873bda4ca89490b69786f61b45658a0ec70b4482669c97bd8",
+  "corpus_sha256": "df2cc9d71ab3aee3cf50c57a2748a922bc3f83206403a98dab58ebb33f5a7d5a",
+  "sample_sha256": "be2411dd73cfcb20c7e55b9fda2aca02a07e05cbf8e8c335a172e6402672d29c",
+  "prompt_sha256": "a8a84c7d3640ce11249e107717a11e24499592c70f24dc2215bc9305b9949889",
+  "format_sha256": "65ee03d0a90267593885b0982684a55a9d7f7d40e7ce2a505d3c3c663a72b3a1",
+  "requested_model": "google/gemma-4-31b-qat",
+  "returned_model": "google/gemma-4-31b-qat",
+  "generated_at_utc": "2026-11-02T16:10:05.438676+00:00",
+  "api_version": null,
+  "gemma_file_sha256": "6f63619c9e33826a2a8ab195a344c79ecae7c82341d5567e28fd8863df056a7b",
+  "gemma_loaded_context_tokens": 16384,
+  "request": {
+    "model": "google/gemma-4-31b-qat",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are writing a plain-language summary of an as-filed Tennessee House bill for an adult reader without legal training.\n\nUse only the bill text supplied in the user message. Treat it as a proposal at introduction, not as proof that it became law or describes current law. Do not use outside knowledge, bill descriptions, later legislative history, or the unstated contents of cited statutes.\n\nWrite a neutral summary in prose. Start with what the bill would change. Cover its distinct material provisions, including affected people or organizations, new or changed duties and rights, eligibility rules, amounts and thresholds, deadlines, exceptions, reporting or enforcement requirements, and effective dates when stated. Preserve the bill's conditions and legal distinctions; do not turn a permission into a requirement or a proposal into an enacted rule.\n\nUse familiar words and short, complete sentences. Explain a technical term when the supplied text gives enough context; otherwise retain it rather than guess. Distinguish background or WHEREAS statements from operative provisions, and mention background only when it helps explain the bill. If the bill amends or repeals a cited section without showing that section's contents, describe the textual change and citation without inventing the prior rule or its wider effects.\n\nKeep the summary substantially shorter than the source while retaining the main independent changes. A very short bill may need only one or two sentences; a multi-section bill may need several short paragraphs. Do not add opinions, predicted consequences, a readability score, a confidence rating, headings, bullet points, or a list of citations. Return only the fields required by the supplied output schema.\n"
+      },
+      {
+        "role": "user",
+        "content": "Bill number: HB2391\n\n<bill_text>\nSENATE BILL 2187\n By Stevens\n\n HOUSE BILL 2391\n\n By Martin B\n\n AN ACT to amend Tennessee Code Annotated, Section\n 49-6-1021, relative to student discipline.\n\nBE IT ENACTED BY THE GENERAL ASSEMBLY OF THE STATE OF TENNESSEE:\n\n SECTION 1. Tennessee Code Annotated, Section 49-6-1021(b)(2), is amended by\n\ndeleting the subdivision and substituting instead:\n\n (2) To satisfy the requirements of subdivision (a)(1), physical activity:\n\n (A) Must include unstructured play outside, unless weather conditions\n\n negatively impact reasonable execution of physical activity outside; and\n\n (B) Does not include:\n\n (i) Time during which a student is permitted to use an electronic\n\n device; or\n\n (ii) Time spent by a student in a physical education class.\n\n (3)\n\n (A) A student may be denied the privilege of participating in physical\n\n activity if the student engages in conduct or behavior that violates the discipline\n\n policy or code of conduct adopted by the school or school district, or if the\n\n student engages in any violent or threatening behavior or any other behavior that\n\n significantly disrupts or impairs the ability of other students to participate in, and\n\n receive the benefits of, the physical activity required in this section.\n\n (B) A teacher or administrator may, as a form of discipline:\n\n (i) Remove a student from, or deny a student participation in, any\n\n physical activity or physical activity period for engaging in any conduct or\n\n behavior described in this subdivision (b)(3); or\n\n (ii) Assign a student who is removed from, or denied participation\n\n in, any physical activity or physical activity period pursuant to this\n\n subdivision (b)(3) alternative lessons, assignments, or activities, including\n\n physical activities, to improve the student's conduct or behavior.\n\nSECTION 2. This act takes effect upon becoming a law, the public welfare requiring it.\n</bill_text>"
+      }
+    ],
+    "response_format": {
+      "type": "json_schema",
+      "json_schema": {
+        "name": "pilot_bill_summary_v1",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "properties": {
+            "summary": {
+              "type": "string",
+              "description": "Reader-facing plain-language summary in prose, without a heading or bullet points."
+            }
+          },
+          "required": [
+            "summary"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "reasoning_effort": "none",
+    "max_tokens": 8192,
+    "stream": false
+  },
+  "response": {
+    "id": "chatcmpl-ti4fyif9c2eg02pcwno7pi",
+    "object": "chat.completion",
+    "created": 1793635793,
+    "model": "google/gemma-4-31b-qat",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"summary\": \"This bill proposes changes to how physical activity is handled for students. It would require physical activity to include unstructured play outside, unless weather conditions make it unreasonable. Physical education classes and time spent using electronic devices would not count as this required physical activity. Under this proposal, students could be denied the privilege of participating in physical activity if they violate school discipline policies or engage in violent, threatening, or significantly disruptive behavior. Teachers or administrators would be permitted to remove students from physical activity as a form of discipline and may assign them alternative lessons or activities to improve their behavior. The act would take effect immediately upon becoming law.\"\n}",
+          "reasoning_content": "",
+          "tool_calls": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 780,
+      "completion_tokens": 137,
+      "total_tokens": 917,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "stats": {},
+    "system_fingerprint": "google/gemma-4-31b-qat"
+  },
+  "summary": "This bill proposes changes to how physical activity is handled for students. It would require physical activity to include unstructured play outside, unless weather conditions make it unreasonable. Physical education classes and time spent using electronic devices would not count as this required physical activity. Under this proposal, students could be denied the privilege of participating in physical activity if they violate school discipline policies or engage in violent, threatening, or significantly disruptive behavior. Teachers or administrators would be permitted to remove students from physical activity as a form of discipline and may assign them alternative lessons or activities to improve their behavior. The act would take effect immediately upon becoming law.",
+  "generation_status": "completed"
+}

@@ -1,0 +1,26 @@
+{
+  "type": "json_schema",
+  "name": "full_coverage_v2",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "assessments": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "proposition_id": {"type": "string"},
+            "status": {"type": "string", "enum": ["full", "partial", "omitted"]},
+            "summary_quote": {"type": "string"},
+            "rationale": {"type": "string"}
+          },
+          "required": ["proposition_id", "status", "summary_quote", "rationale"],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": ["assessments"],
+    "additionalProperties": false
+  }
+}

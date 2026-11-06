@@ -1,0 +1,83 @@
+{
+  "provider": "claude",
+  "bill_number": "HB2391",
+  "id": "2105786",
+  "cell": "medium",
+  "tertile": "medium",
+  "bill_text_sha256": "41467128f31b348873bda4ca89490b69786f61b45658a0ec70b4482669c97bd8",
+  "corpus_sha256": "df2cc9d71ab3aee3cf50c57a2748a922bc3f83206403a98dab58ebb33f5a7d5a",
+  "sample_sha256": "be2411dd73cfcb20c7e55b9fda2aca02a07e05cbf8e8c335a172e6402672d29c",
+  "prompt_sha256": "a8a84c7d3640ce11249e107717a11e24499592c70f24dc2215bc9305b9949889",
+  "format_sha256": "65ee03d0a90267593885b0982684a55a9d7f7d40e7ce2a505d3c3c663a72b3a1",
+  "requested_model": "claude-sonnet-5-5",
+  "returned_model": "claude-sonnet-5-5",
+  "generated_at_utc": "2026-11-02T16:04:03.207225+00:00",
+  "api_version": "2026-10-21",
+  "gemma_file_sha256": null,
+  "gemma_loaded_context_tokens": null,
+  "request": {
+    "model": "claude-sonnet-5-5",
+    "system": "You are writing a plain-language summary of an as-filed Tennessee House bill for an adult reader without legal training.\n\nUse only the bill text supplied in the user message. Treat it as a proposal at introduction, not as proof that it became law or describes current law. Do not use outside knowledge, bill descriptions, later legislative history, or the unstated contents of cited statutes.\n\nWrite a neutral summary in prose. Start with what the bill would change. Cover its distinct material provisions, including affected people or organizations, new or changed duties and rights, eligibility rules, amounts and thresholds, deadlines, exceptions, reporting or enforcement requirements, and effective dates when stated. Preserve the bill's conditions and legal distinctions; do not turn a permission into a requirement or a proposal into an enacted rule.\n\nUse familiar words and short, complete sentences. Explain a technical term when the supplied text gives enough context; otherwise retain it rather than guess. Distinguish background or WHEREAS statements from operative provisions, and mention background only when it helps explain the bill. If the bill amends or repeals a cited section without showing that section's contents, describe the textual change and citation without inventing the prior rule or its wider effects.\n\nKeep the summary substantially shorter than the source while retaining the main independent changes. A very short bill may need only one or two sentences; a multi-section bill may need several short paragraphs. Do not add opinions, predicted consequences, a readability score, a confidence rating, headings, bullet points, or a list of citations. Return only the fields required by the supplied output schema.\n",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Bill number: HB2391\n\n<bill_text>\nSENATE BILL 2187\n By Stevens\n\n HOUSE BILL 2391\n\n By Martin B\n\n AN ACT to amend Tennessee Code Annotated, Section\n 49-6-1021, relative to student discipline.\n\nBE IT ENACTED BY THE GENERAL ASSEMBLY OF THE STATE OF TENNESSEE:\n\n SECTION 1. Tennessee Code Annotated, Section 49-6-1021(b)(2), is amended by\n\ndeleting the subdivision and substituting instead:\n\n (2) To satisfy the requirements of subdivision (a)(1), physical activity:\n\n (A) Must include unstructured play outside, unless weather conditions\n\n negatively impact reasonable execution of physical activity outside; and\n\n (B) Does not include:\n\n (i) Time during which a student is permitted to use an electronic\n\n device; or\n\n (ii) Time spent by a student in a physical education class.\n\n (3)\n\n (A) A student may be denied the privilege of participating in physical\n\n activity if the student engages in conduct or behavior that violates the discipline\n\n policy or code of conduct adopted by the school or school district, or if the\n\n student engages in any violent or threatening behavior or any other behavior that\n\n significantly disrupts or impairs the ability of other students to participate in, and\n\n receive the benefits of, the physical activity required in this section.\n\n (B) A teacher or administrator may, as a form of discipline:\n\n (i) Remove a student from, or deny a student participation in, any\n\n physical activity or physical activity period for engaging in any conduct or\n\n behavior described in this subdivision (b)(3); or\n\n (ii) Assign a student who is removed from, or denied participation\n\n in, any physical activity or physical activity period pursuant to this\n\n subdivision (b)(3) alternative lessons, assignments, or activities, including\n\n physical activities, to improve the student's conduct or behavior.\n\nSECTION 2. This act takes effect upon becoming a law, the public welfare requiring it.\n</bill_text>"
+      }
+    ],
+    "max_tokens": 8192,
+    "output_config": {
+      "effort": "medium",
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "summary": {
+              "type": "string",
+              "description": "Reader-facing plain-language summary in prose, without a heading or bullet points."
+            }
+          },
+          "required": [
+            "summary"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "claude-sonnet-5-5",
+    "id": "msg_011CgePH3eV3hBKQZ7qYw6QF",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"summary\":\"This bill would change a Tennessee law on school physical activity, Section 49-6-1021(b)(2), by replacing that subdivision with new rules. The text does not show the requirement in subdivision (a)(1), only that physical activity must satisfy it.\\n\\nFirst, the physical activity used to meet that requirement must include unstructured play outside. The exception is when weather conditions negatively impact reasonable execution of physical activity outside. The activity could not count time when a student is allowed to use an electronic device. It also could not count time a student spends in a physical education class.\\n\\nSecond, a student could be denied the privilege of taking part in physical activity. This could happen if the student breaks the school or school district discipline policy or code of conduct. It could also happen if the student acts in a violent or threatening way, or in another way that significantly disrupts or impairs other students' ability to take part in the activity and get its benefits.\\n\\nThird, a teacher or administrator could use this as discipline. The teacher or administrator may remove a student from, or deny participation in, any physical activity or activity period for that conduct. The teacher or administrator may also give a removed student alternative lessons, assignments, or activities, including physical activities, to improve the student's conduct or behavior. These are permissions, not requirements.\\n\\nThe bill would take effect as soon as it becomes law.\"}"
+      }
+    ],
+    "container": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 1424,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 442,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    },
+    "diagnostics": null
+  },
+  "summary": "This bill would change a Tennessee law on school physical activity, Section 49-6-1021(b)(2), by replacing that subdivision with new rules. The text does not show the requirement in subdivision (a)(1), only that physical activity must satisfy it.\n\nFirst, the physical activity used to meet that requirement must include unstructured play outside. The exception is when weather conditions negatively impact reasonable execution of physical activity outside. The activity could not count time when a student is allowed to use an electronic device. It also could not count time a student spends in a physical education class.\n\nSecond, a student could be denied the privilege of taking part in physical activity. This could happen if the student breaks the school or school district discipline policy or code of conduct. It could also happen if the student acts in a violent or threatening way, or in another way that significantly disrupts or impairs other students' ability to take part in the activity and get its benefits.\n\nThird, a teacher or administrator could use this as discipline. The teacher or administrator may remove a student from, or deny participation in, any physical activity or activity period for that conduct. The teacher or administrator may also give a removed student alternative lessons, assignments, or activities, including physical activities, to improve the student's conduct or behavior. These are permissions, not requirements.\n\nThe bill would take effect as soon as it becomes law.",
+  "generation_status": "completed"
+}

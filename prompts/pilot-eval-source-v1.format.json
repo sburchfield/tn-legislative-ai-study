@@ -1,0 +1,27 @@
+{
+  "type": "json_schema",
+  "name": "pilot_source_propositions_v1",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "propositions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {"type": "string"},
+            "proposition": {"type": "string"},
+            "importance": {"type": "string", "enum": ["core", "supporting"]},
+            "section": {"type": "string"},
+            "source_quote": {"type": "string"}
+          },
+          "required": ["id", "proposition", "importance", "section", "source_quote"],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": ["propositions"],
+    "additionalProperties": false
+  }
+}

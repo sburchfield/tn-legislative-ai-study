@@ -1,0 +1,162 @@
+{
+  "bill_number": "HB2329",
+  "id": "2106151",
+  "cell": "short_minimal",
+  "bill_text_sha256": "b2495087698f8a9ea2cebc90e72f9f9c90ed65f8e81aec3f641ca4effce1ce15",
+  "corpus_sha256": "df2cc9d71ab3aee3cf50c57a2748a922bc3f83206403a98dab58ebb33f5a7d5a",
+  "prompt_sha256": "a8a84c7d3640ce11249e107717a11e24499592c70f24dc2215bc9305b9949889",
+  "format_sha256": "65ee03d0a90267593885b0982684a55a9d7f7d40e7ce2a505d3c3c663a72b3a1",
+  "requested_model": "gpt-6-sol",
+  "returned_model": "gpt-6-sol",
+  "generated_at_utc": "2026-10-04T20:25:51.192532+00:00",
+  "request": {
+    "model": "gpt-6-sol",
+    "instructions": "You are writing a plain-language summary of an as-filed Tennessee House bill for an adult reader without legal training.\n\nUse only the bill text supplied in the user message. Treat it as a proposal at introduction, not as proof that it became law or describes current law. Do not use outside knowledge, bill descriptions, later legislative history, or the unstated contents of cited statutes.\n\nWrite a neutral summary in prose. Start with what the bill would change. Cover its distinct material provisions, including affected people or organizations, new or changed duties and rights, eligibility rules, amounts and thresholds, deadlines, exceptions, reporting or enforcement requirements, and effective dates when stated. Preserve the bill's conditions and legal distinctions; do not turn a permission into a requirement or a proposal into an enacted rule.\n\nUse familiar words and short, complete sentences. Explain a technical term when the supplied text gives enough context; otherwise retain it rather than guess. Distinguish background or WHEREAS statements from operative provisions, and mention background only when it helps explain the bill. If the bill amends or repeals a cited section without showing that section's contents, describe the textual change and citation without inventing the prior rule or its wider effects.\n\nKeep the summary substantially shorter than the source while retaining the main independent changes. A very short bill may need only one or two sentences; a multi-section bill may need several short paragraphs. Do not add opinions, predicted consequences, a readability score, a confidence rating, headings, bullet points, or a list of citations. Return only the fields required by the supplied output schema.\n",
+    "input": "Bill number: HB2329\n\n<bill_text>\nSENATE BILL 2140\n By White\n\n HOUSE BILL 2329\n\n By Reneau\n\n AN ACT to amend Tennessee Code Annotated, Title 49\n and Title 68, relative to school nurses.\n\nBE IT ENACTED BY THE GENERAL ASSEMBLY OF THE STATE OF TENNESSEE:\n\n SECTION 1. Tennessee Code Annotated, Section 49-3-359(c)(2), is amended by\n\ndeleting \"July 31\" and substituting \"July 1\".\n\n SECTION 2. This act takes effect upon becoming a law, the public welfare requiring it.\n</bill_text>",
+    "reasoning": {
+      "effort": "medium"
+    },
+    "max_output_tokens": 8192,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "pilot_bill_summary_v1",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "properties": {
+            "summary": {
+              "type": "string",
+              "description": "Reader-facing plain-language summary in prose, without a heading or bullet points."
+            }
+          },
+          "required": [
+            "summary"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "store": false
+  },
+  "response": {
+    "id": "resp_0eee653a4fac02d7016ac2b64c61b887d291d870044f5e07cb",
+    "object": "response",
+    "created_at": 1791145548,
+    "status": "completed",
+    "access_programs": null,
+    "background": false,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1791145551,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "incomplete_details": null,
+    "instructions": "You are writing a plain-language summary of an as-filed Tennessee House bill for an adult reader without legal training.\n\nUse only the bill text supplied in the user message. Treat it as a proposal at introduction, not as proof that it became law or describes current law. Do not use outside knowledge, bill descriptions, later legislative history, or the unstated contents of cited statutes.\n\nWrite a neutral summary in prose. Start with what the bill would change. Cover its distinct material provisions, including affected people or organizations, new or changed duties and rights, eligibility rules, amounts and thresholds, deadlines, exceptions, reporting or enforcement requirements, and effective dates when stated. Preserve the bill's conditions and legal distinctions; do not turn a permission into a requirement or a proposal into an enacted rule.\n\nUse familiar words and short, complete sentences. Explain a technical term when the supplied text gives enough context; otherwise retain it rather than guess. Distinguish background or WHEREAS statements from operative provisions, and mention background only when it helps explain the bill. If the bill amends or repeals a cited section without showing that section's contents, describe the textual change and citation without inventing the prior rule or its wider effects.\n\nKeep the summary substantially shorter than the source while retaining the main independent changes. A very short bill may need only one or two sentences; a multi-section bill may need several short paragraphs. Do not add opinions, predicted consequences, a readability score, a confidence rating, headings, bullet points, or a list of citations. Return only the fields required by the supplied output schema.\n",
+    "max_output_tokens": 8192,
+    "max_tool_calls": null,
+    "model": "gpt-6-sol",
+    "moderation": null,
+    "output": [
+      {
+        "id": "rs_0eee653a4fac02d7016ac2b64dd1fc87d28ef814268b53c87c",
+        "type": "reasoning",
+        "content": [],
+        "encrypted_content": "gAAAAABqwrZPoJPfNs4hfhVg8X0N65Twq5M6hcTfU-K20_0XD5iy1WDhnDfCKLeFNUPb8lS5ZgSWnNFgiIhCvMje4dKDXrL84680EG7lfs9cmLIEPs4UlJj0vYUU3DbcVtr686SN06_UXmxncHqjWtqJk2vOpFYxonrA7H1zaTGVPxEsRgx9EHkCYjSp7ssd5O3bmAZWu_67FGh87ERJhAVrL4P9cqXvh6q1fh9xs5wMBlH_z8KovKEZ16oC2XqaDmtWD-E75-XDdk2-Schi7nx_QsDDcc0W70qc7--QYMLaMCWlQgTACOMzvbj1YjDgApJcWjA8KJA5AaJqqp0uzH7UEq5s0IiKMIuMRW-Z3AwS6P0CJCIgZpXCQdez5q7oD-_p7GKgPR-84geoSDq2RBY1W1Q5PfL2lrgjE_4r1rxVJ9K9TKCcwt1dTZisibgdoYfprjvuyUcS0bJoRWB3GP-7F_5gMYL3XOeNPYMhqW83b98ZeGi01PgUU0gtMPVssx3uFlKUhHTtNKtkvLQlGkis78ealGjEd82op4ndoYZqDmTh_OcQSrsP_F8Rf6lxnoQIZkzrI5I06UhV2Hf3GrKq9eLsAyhK-7c8M86ySMw2qt1oDtIJ8H52d812MmQidjQZ5Sh_Fdb84JAAd4ExDBzxJCfyVZ8dTVmSzTejhi1z9ry1I5iJ95muL7z5Suomba30JCxWVnmqnjsrGRwTDOBiUIrFlw2Zvso45t1oFi6MU4tKZUBuSYRR8TscbulwX_lxdrvKJghh5QsjnxSRi_u8PVGRs_W7xIukmi5HiiQoU8b6B79s5o7yLnisxRKXrJ9B5Q5mM95bsOh5f_ooqUX688b5yl5hhIBknxZRY3Ni4y18L9jNRNBvAGASk7qwWumMJSrO8knqYOFzR0d_Eih1Me4AptA6hMWLg5pf1l4AQwnahVXZPz3jDuLFXPY46X_s7JDWFHtAMHTVtdlPHtJ9VHQP3HpJiGLLPYcExcUhfHD4Bt3iNaIpybsjy00FHIHWauZXXcjQaCfG8SxmCSET9fcL6EuaKmKLbbHn5D4Rvoh30e06iyUj1B7O41Vvdj_xQFkfmqmrBGA1ixpXbs_51UsKzbQ47TxH1ZMP-GDNM4TwZlUZfxyErLFE_ISMlq39vMQ7C3lSHeoWzLQqomXZ2-6dYOGwr1s8t3X9Xs_c7T2qL09kHdWeN0bkO2fLtQYa-j3xw7NQGXFF0OcPNmfBhoiw5rNRzbzxv8Wk4wJnTB72AmVDomarNqkKepnhyQdr3LPRJbMOeJ_N_wVKkotJjZCfzwk-A-nNhPvJfdGZ_rKd80lejx8=",
+        "summary": []
+      },
+      {
+        "id": "msg_0eee653a4fac02d7016ac2b64e581c87d2b80729db60be7e0f",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "{\"summary\":\"The bill would change “July 31” to “July 1” in Tennessee Code Annotated, Section 49-3-359(c)(2). The bill does not show what that date applies to. It would take effect upon becoming law.\"}"
+          }
+        ],
+        "phase": "final_answer",
+        "role": "assistant"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": false,
+    "temperature": 1.0,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "description": null,
+        "name": "pilot_bill_summary_v1",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "summary": {
+              "type": "string",
+              "description": "Reader-facing plain-language summary in prose, without a heading or bullet points."
+            }
+          },
+          "required": [
+            "summary"
+          ],
+          "additionalProperties": false
+        },
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 507,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 89,
+      "output_tokens_details": {
+        "reasoning_tokens": 21
+      },
+      "total_tokens": 596
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "summary": "The bill would change “July 31” to “July 1” in Tennessee Code Annotated, Section 49-3-359(c)(2). The bill does not show what that date applies to. It would take effect upon becoming law.",
+  "generation_status": "completed"
+}
